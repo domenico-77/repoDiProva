@@ -28,7 +28,7 @@ jobs:
 
     - name: Move CSV file to main repository
       run: mv temp_repo/output output
-      # Spostiamo il file CSV generato nella directory output del repository principale
+      # Spostiamo il file CSV generato nella directory output del repository principalee
 
     - name: Commit changes
       run: |
