@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'  # Specifica la versione di Python desiderata
+    
+    - name: Install dependencies
+      run: python -m pip install -r path/to/requirements.txt
 
     - name: Clone repository containing crea_csv.py
       run: git clone https://github.com/collab-uniba/developersInactivityAnalysis.git InactivityAnalysis
