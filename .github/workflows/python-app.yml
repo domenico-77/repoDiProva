@@ -18,13 +18,16 @@ jobs:
       with:
         python-version: '3.x'  # Specifica la versione di Python desiderata
     
+    - name: Install dependencies
+      run: python -m pip install -r requirements.txt
+    
 
     - name: Clone repository containing crea_csv.py
       run: git clone https://github.com/collab-uniba/developersInactivityAnalysis.git InactivityAnalysis
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
       
-    - name: Install dependencies
-      run: python -m pip install -r InactivityAnalysis/requirements.txt
+    #- name: Install dependencies
+    #  run: python -m pip install -r InactivityAnalysis/requirements.txt
 
     - name: Run Python script
       run: python3 InactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/JabRef/jabref.git
