@@ -23,20 +23,20 @@ jobs:
     
 
     - name: Clone repository containing crea_csv.py
-      run: git clone https://github.com/collab-uniba/developersInactivityAnalysis.git InactivityAnalysis
+      run: git clone https://github.com/collab-uniba/developersInactivityAnalysis.git
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
       
     #- name: Install dependencies
     #  run: python -m pip install -r InactivityAnalysis/requirements.txt
 
     - name: Run Python script
-      run: python3 InactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/JabRef/jabref.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/JabRef/jabref.git
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
 
     - name: Move CSV file to main repository
       run: |
 
-        mv InactivityAnalysis/A80_Results/jabref output
+        mv developersInactivityAnalysis/A80_Results/jabref output
       # mv InactivityAnalysis output/Cstats.csv
       # Spostiamo il file CSV generato nella directory output del repository principalee
 
