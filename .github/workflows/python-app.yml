@@ -36,8 +36,8 @@ jobs:
     - name: Move CSV file to main repository
       run: |
 
-        mv InactivityAnalysis output/commits.csv
-        mv InactivityAnalysis output/Cstats.csv
+        mv InactivityAnalysis output
+      # mv InactivityAnalysis output/Cstats.csv
       # Spostiamo il file CSV generato nella directory output del repository principalee
 
     - name: Commit changes
