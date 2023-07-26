@@ -40,7 +40,7 @@ jobs:
     - name: Move CSV file to main repository
       run: |
 
-        mv developersInactivityAnalysis/A80_Results/jabref output
+        mv developersInactivityAnalysis/A80_Results/jabref/ output
       # mv InactivityAnalysis output/Cstats.csv
       # Spostiamo il file CSV generato nella directory output del repository principalee
 
