@@ -22,8 +22,6 @@ jobs:
     #  run: |
     #    python -m pip install -r requirements.txt
         
-    
-
     - name: Clone repository containing crea_csv.py
       run: |
         git clone https://github.com/domenico-77/developersInactivityAnalysis.git
@@ -36,19 +34,16 @@ jobs:
       run: python -m pip install -r developersInactivityAnalysis/requirements.txt
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/JabRef/jabref.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
 
     - name: Move CSV file to main repository
       run: |
-
         mv developersInactivityAnalysis/A80_Results/jabref output
-      # mv InactivityAnalysis output/Cstats.csv
       # Spostiamo il file CSV generato nella directory output del repository principalee
 
     - name: Commit changes
-      run: |
-        
+      run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git add output
