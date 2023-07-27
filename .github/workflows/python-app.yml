@@ -17,21 +17,26 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'  # Specifica la versione di Python desiderata
-    
-    #- name: Install dependencies
-    #  run: |
-    #    python -m pip install -r requirements.txt
-        
+
+    - name: Cache Python dependencies
+      id: cache-python-deps
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+      # Salviamo la cache delle dipendenze Python basandoci sul file requirements.txt
+
     - name: Clone repository containing crea_csv.py
       run: |
         git clone https://github.com/domenico-77/developersInactivityAnalysis.git
         cd developersInactivityAnalysis
         git checkout tubvic
-      
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
-      
+
     - name: Install dependencies
+      if: steps.cache-python-deps.outputs.cache-hit != 'true'
       run: python -m pip install -r developersInactivityAnalysis/requirements.txt
+      # Installiamo le dipendenze solo se la cache non è stata colpita
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
@@ -40,7 +45,7 @@ jobs:
     - name: Move CSV file to main repository
       run: |
         mv developersInactivityAnalysis/A80_Results/linguist output
-      # Spostiamo il file CSV generato nella directory output del repository principalee
+      # Spostiamo il file CSV generato nella directory output del repository principale
 
     - name: Commit changes
       run: |        
