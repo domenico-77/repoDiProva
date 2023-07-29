@@ -1,0 +1,16 @@
+on:
+  workflow_run:
+    workflows: ["Run Python script and save CSV file"]
+    types:
+      - completed
+
+jobs:
+  job_name:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+
+    steps:
+      - name: Esegui quando il workflow fallisce
+        run: |
+          echo "Il workflow di riferimento è fallito!"
