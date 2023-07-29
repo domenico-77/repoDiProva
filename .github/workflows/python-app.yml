@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
 
     steps:
     - name: Checkout main repository
@@ -26,7 +27,7 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
       # Salviamo la cache delle dipendenze Python basandoci sul file requirements.txt
 
-    - name: Clone repository containing crea_csv.py
+    - name: Clone repository developersInactivityAnalysis
       run: |
         git clone https://github.com/domenico-77/developersInactivityAnalysis.git
         cd developersInactivityAnalysis
@@ -40,14 +41,25 @@ jobs:
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
+      continue-on-error: true #se supera il tempo viene interrotto questo ma si passa al successivo
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
+      
+    - name: Archivia i dati come artefatto
+      if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
+      uses: actions/upload-artifact@v2
+      with:
+       name: LocalNonDocCommitExtractor-artifact
+       path: developersInactivityAnalysis/A80_Results/linguist
+
 
     - name: Move CSV file to main repository
-      run: |
+      if: ${{ success() }} #si avvia solo se quello prima ha concluso
+      run: | 
         mv developersInactivityAnalysis/A80_Results/linguist output
       # Spostiamo il file CSV generato nella directory output del repository principale
 
     - name: Commit changes
+      if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
