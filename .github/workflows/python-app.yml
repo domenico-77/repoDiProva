@@ -44,7 +44,7 @@ jobs:
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
       
     - name: Archivia i dati come artefatto
-      if: ${{ steps.RunPythonscript.outcome != 'failure' }} #si avvia solo se quello di prima è stato interrotto
+      if: ${{ steps."Run Python script".outcome == 'failure' }} #si avvia solo se quello di prima è stato interrotto
       uses: actions/upload-artifact@v2
       with:
        name: LocalNonDocCommitExtractor-artifact
