@@ -35,7 +35,6 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
       # Salviamo la cache delle dipendenze Python basandoci sul file requirements.txt
 
     - name: Run Python script
