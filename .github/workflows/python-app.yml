@@ -41,11 +41,10 @@ jobs:
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
       timeout-minutes: 340  # Imposta il timeout per questo passaggio
-      continue-on-error: true
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
       
     - name: Archivia i dati come artefatto
-      if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
+      if: ${{ steps.RunPythonscript.outcome != 'failure' }} #si avvia solo se quello di prima è stato interrotto
       uses: actions/upload-artifact@v2
       with:
        name: LocalNonDocCommitExtractor-artifact
@@ -53,13 +52,13 @@ jobs:
 
 
     - name: Move CSV file to main repository
-      if: ${{ success() }} #si avvia solo se quello prima ha concluso
+      #if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: | 
         mv developersInactivityAnalysis/A80_Results/linguist output
       # Spostiamo il file CSV generato nella directory output del repository principale
 
     - name: Commit changes
-      if: ${{ success() }} #si avvia solo se quello prima ha concluso
+      #if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
