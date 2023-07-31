@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
 
     steps:
     - name: Checkout main repo
@@ -41,6 +40,8 @@ jobs:
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
+      timeout-minutes: 340  # Imposta il timeout per questo passaggio
+      continue-on-error: true
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
       
     - name: Archivia i dati come artefatto
