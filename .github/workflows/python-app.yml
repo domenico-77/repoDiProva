@@ -41,7 +41,6 @@ jobs:
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
-      continue-on-error: true #se supera il tempo viene interrotto questo ma si passa al successivo
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
       
     - name: Archivia i dati come artefatto
