@@ -16,7 +16,7 @@ jobs:
         with:
           name: LocalNonDocCommitExtractor-artifact  # Nome dell'artefatto da scaricare, sostituisci con il nome corretto
           path: downloaded_artifacts  # Directory in cui verranno scaricati gli artefatti
-          continue-on-error: true
+        continue-on-error: true
 
       - name: List artifacts (if available)
         run: |
