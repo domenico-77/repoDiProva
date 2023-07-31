@@ -26,8 +26,8 @@ jobs:
         
       - name: Commit changes   
         run: |        
-          git config --local user.name "domenico-77"
-          git config --local user.email "d.vicenti1@studenti.uniba.it"
+          git config user.name "domenico-77"
+          git config user.email "d.vicenti1@studenti.uniba.it"
           git add downloaded_artifacts
           git commit -m "Added downloaded_artifacts"
           git push
