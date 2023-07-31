@@ -23,3 +23,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Crea la cartella per gli artefatti
         run: mkdir downloaded_artifacts
+        
+      - name: Commit changes   
+        run: |        
+          git config --local user.name "domenico-77"
+          git config --local user.email "d.vicenti1@studenti.uniba.it"
+          git add downloaded_artifacts
+          git commit -m "Added downloaded_artifacts"
+          git push
