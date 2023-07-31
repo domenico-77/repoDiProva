@@ -26,17 +26,30 @@ jobs:
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
 
     - name: Install dependencies
-      if: steps.cache-python-deps.outputs.cache-hit != 'true'
+      if: $ {{ steps.cache-python-deps.outputs.cache-hit != 'true' }}
       run: python -m pip install -r developersInactivityAnalysis/requirements.txt
       # Installiamo le dipendenze solo se la cache non è stata colpita
 
     - name: Cache Python dependencies
+      if: ${{ steps.cache-python-deps.outputs.cache-hit != 'true' }}
       id: cache-python-deps2
       uses: actions/cache@v3
+      env:
+          cache-name: cache-python-modules
       with:
-        path: ~/.cache/pip
-        #key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+        path: $ {{ steps.cache-python-deps.outputs.dir }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+        restore-keys:
+          ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+          ${{ runner.os }}-pip-
+          ${{ runner.os }}-
       # Salviamo la cache delle dipendenze Python basandoci sul file requirements.txt
+      
+    - name: Set Python Path for Cached Dependencies
+      if: ${{ steps.cache-python-deps.outputs.cache-hit == 'true' }}
+      run: |
+        echo "export PATH=$HOME/.cache/pip:$PATH" >> $GITHUB_ENV
+        # Aggiungi il percorso della cache delle dipendenze al sistema di riferimento delle variabili di ambiente
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
