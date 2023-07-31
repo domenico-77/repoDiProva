@@ -18,6 +18,10 @@ jobs:
       with:
         python-version: '3.x'  # Specifica la versione di Python desiderata
         
+    - name: Get python cache directory path
+      id: python-cache-dir-path
+      run: echo "::set-output name=dir::$(python cache dir)"
+        
     - name: Clone repository developersInactivityAnalysis
       run: |
         git clone https://github.com/domenico-77/developersInactivityAnalysis.git
