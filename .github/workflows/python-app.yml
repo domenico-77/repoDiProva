@@ -24,6 +24,12 @@ jobs:
         cd developersInactivityAnalysis
         git checkout tubvic
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
+    - name: Cache Python dependencies
+      id: cache-python-deps1
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
     
     - name: Install dependencies
       if: steps.cache-python-deps.outputs.cache-hit != 'true'
@@ -31,10 +37,11 @@ jobs:
       # Installiamo le dipendenze solo se la cache non è stata colpita
 
     - name: Cache Python dependencies
-      id: cache-python-deps
+      id: cache-python-deps2
       uses: actions/cache@v2
       with:
         path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
       # Salviamo la cache delle dipendenze Python basandoci sul file requirements.txt
 
     - name: Run Python script
