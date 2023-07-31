@@ -37,7 +37,7 @@ jobs:
       env:
           cache-name: cache-python-modules
       with:
-        path: $ {{ steps.cache-python-deps.outputs.dir }}
+        path: ${{ steps.cache-python-deps.outputs.dir }}
         key: ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
         restore-keys:
           ${{ runner.os }}-pip-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
