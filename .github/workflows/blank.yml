@@ -19,6 +19,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
       - name: Crea la cartella per gli artefatti
@@ -26,8 +28,8 @@ jobs:
         
       - name: Commit changes   
         run: |        
-          git config user.name "domenico-77"
-          git config user.email "d.vicenti1@studenti.uniba.it"
+          git config --local user.name "domenico-77"
+          git config --local user.email "d.vicenti1@studenti.uniba.it"
           git add downloaded_artifacts
           git commit -m "Added downloaded_artifacts"
           git push
