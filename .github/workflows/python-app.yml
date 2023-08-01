@@ -20,9 +20,8 @@ jobs:
         
     - name: Clone repository developersInactivityAnalysis
       run: |
-        git clone https://github.com/domenico-77/developersInactivityAnalysis.git
+        git clone -b tubvic https://github.com/domenico-77/developersInactivityAnalysis.git
         cd developersInactivityAnalysis
-        git checkout tubvic
       
       
     - name: Cache Python dependencies
@@ -40,7 +39,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/MinecraftForge/MinecraftForge.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
       timeout-minutes: 340
       
     - name: Archivia i dati come artefatto
@@ -48,7 +47,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
        name: LocalNonDocCommitExtractor-artifact
-       path: developersInactivityAnalysis/A80_Results/MinecraftForge
+       path: developersInactivityAnalysis/A80_Results/linguist
 
 
     - name: Move CSV file to main repository
@@ -57,7 +56,7 @@ jobs:
            mv developersInactivityAnalysis/A80_Results/MinecraftForge output
         else
            rm -r output/MinecraftForge
-           mv developersInactivityAnalysis/A80_Results/MinecraftForge output
+           mv developersInactivityAnalysis/A80_Results/linguist output
         fi
 
     - name: Commit changes
