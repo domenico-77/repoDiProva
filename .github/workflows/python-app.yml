@@ -13,18 +13,19 @@ jobs:
     - name: Checkout main repo
       uses: actions/checkout@v2
       
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+        cache: true
+      
     - name: Cache Python dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-python-
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.x
 
     - name: Install Python dependencies
       run: |
