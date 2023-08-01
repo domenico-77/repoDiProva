@@ -1,0 +1,37 @@
+name: Python CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Sostituisci 'x' con la versione specifica di Python che stai utilizzando
+
+    - name: Restore Python dependencies cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}  # Assicurati di avere il giusto percorso al file delle dipendenze del progetto (requirements.txt)
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # Qui inserisci tutti gli altri passaggi necessari per il tuo flusso di lavoro come test, build, ecc.
+
+    - name: Save Python dependencies cache
+      if: ${{ always() }}  # La cache viene salvata sempre, indipendentemente dall'esito del job
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}  # Assicurati di avere il giusto percorso al file delle dipendenze del progetto (requirements.txt)
