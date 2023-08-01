@@ -43,7 +43,7 @@ jobs:
       # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/MinecraftForge/MinecraftForge.git
       timeout-minutes: 340  # Imposta il timeout per questo passaggio
       # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
       
@@ -52,13 +52,20 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
        name: LocalNonDocCommitExtractor-artifact
-       path: developersInactivityAnalysis/A80_Results/linguist
+       path: developersInactivityAnalysis/A80_Results/MinecraftForge
 
 
     - name: Move CSV file to main repository
       #if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: | 
-        mv developersInactivityAnalysis/A80_Results/linguist output
+        if [ -z "$(find output/MinecraftForge -mindepth 1 -maxdepth 1)" ]; then
+           mv developersInactivityAnalysis/A80_Results/MinecraftForge output
+        else
+           rm output/MinecraftForge/*
+           mv developersInactivityAnalysis/A80_Results/MinecraftForge output
+        fi
+
+        
       # Spostiamo il file CSV generato nella directory output del repository principale
 
     - name: Commit changes
