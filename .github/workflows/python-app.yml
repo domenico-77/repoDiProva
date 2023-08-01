@@ -16,19 +16,14 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.x
-    #    cache: 'pip'
-    #    cache-dependency-path: '**/requirements.txt'
-    #- run: pip install -r requirements.txt
-      
-   
+        python-version: 3.x   
         
     - name: Clone repository developersInactivityAnalysis
       run: |
         git clone https://github.com/domenico-77/developersInactivityAnalysis.git
         cd developersInactivityAnalysis
         git checkout tubvic
-      # Sostituisci USERNAME con il tuo nome utente GitHub e REPO_NAME con il nome del repository contenente crea_csv.py
+      
       
     - name: Cache Python dependencies
       uses: actions/cache@v3
@@ -40,15 +35,13 @@ jobs:
           ${{ runner.os }}-python-
 
     - name: Install Python dependencies
-      #if: steps.cache-pip.outputs.cache-hit != 'true'
       run: 
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/MinecraftForge/MinecraftForge.git
-      timeout-minutes: 340  # Imposta il timeout per questo passaggio
-      # Assicurati che il percorso sia corretto, in base alla posizione del tuo file crea_csv.py nel repository clonato
+      timeout-minutes: 340
       
     - name: Archivia i dati come artefatto
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
@@ -59,20 +52,15 @@ jobs:
 
 
     - name: Move CSV file to main repository
-      #if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: | 
         if [ -z "$(find output/MinecraftForge -mindepth 1 -maxdepth 1)" ]; then
            mv developersInactivityAnalysis/A80_Results/MinecraftForge output
         else
-           rm output/MinecraftForge
+           rm -r output/MinecraftForge
            mv developersInactivityAnalysis/A80_Results/MinecraftForge output
         fi
 
-        
-      # Spostiamo il file CSV generato nella directory output del repository principale
-
     - name: Commit changes
-      #if: ${{ success() }} #si avvia solo se quello prima ha concluso
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
