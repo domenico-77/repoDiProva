@@ -41,7 +41,9 @@ jobs:
         pip install -r requirements.txt
 
     - name: sposta da appoggio ad developersInactivityAnalysis/A80_Results/linguist
-      run: mv appoggio/linguist/commits.csv developersInactivityAnalysis/A80_Results/linguist/
+      run: |
+         mkdir -p developersInactivityAnalysis/A80_Results/linguist/
+         mv appoggio/linguist/commits.csv developersInactivityAnalysis/A80_Results/linguist/
       
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
