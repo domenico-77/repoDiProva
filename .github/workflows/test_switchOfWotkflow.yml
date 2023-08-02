@@ -1,7 +1,7 @@
 name: Secondo avvio
 on:
   workflow_run:
-    workflows: ["Run Python script and save CSV file"]
+    workflows: ["Run Python script and save CSV file", "Runner secondo avvio"]
     types:
       - completed
 
