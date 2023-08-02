@@ -1,4 +1,4 @@
-name: Runner secondo avvio
+name: Trigger Secondo avvio LocalNonDocCommitExtractor
 
 on:
   workflow_run:
