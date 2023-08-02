@@ -1,0 +1,27 @@
+name: Runner secondo avvio
+
+on:
+  workflow_run:
+    workflows: ["Secondo avvio"]
+    types:
+      - completed
+
+jobs:
+  generate_failure:
+    runs-on: ubuntu-latest
+    
+    if: ${{ github.event.workflow_run.conclusion == 'failure'}}
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Python script (which generates a failure)
+        run: python -c "import sys; sys.exit(1)"
+
+   
