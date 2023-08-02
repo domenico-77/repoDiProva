@@ -1,4 +1,4 @@
-name: Secondo avvio
+name: Secondo avvio LocalNonDocCommitExtractor
 on:
   workflow_run:
     workflows: ["Run Python script and save CSV file", "Runner secondo avvio"]
