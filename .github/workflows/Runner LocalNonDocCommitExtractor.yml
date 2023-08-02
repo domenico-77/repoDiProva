@@ -1,4 +1,4 @@
-name: Run Python script and save CSV file
+name: Runner LocalNonDocCommitExtractor
 
 on:
   push:
