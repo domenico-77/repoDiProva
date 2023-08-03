@@ -10,7 +10,7 @@ jobs:
   job_name:
     runs-on: ubuntu-latest
 
-    #if: ${{ github.event.workflow_run.conclusion == 'failure'}}
+    if: ${{ github.event.workflow_run.conclusion == 'failure'}}
 
     steps:
     - name: Checkout main repo
