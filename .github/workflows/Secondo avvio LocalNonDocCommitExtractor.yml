@@ -2,7 +2,7 @@ name: Secondo avvio LocalNonDocCommitExtractor
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Run Python script and save CSV file", "Runner secondo avvio"]
+    workflows: ["Runner LocalNonDocCommitExtractor", "Trigger Secondo avvio LocalNonDocCommitExtractor"]
     types:
       - completed
 
