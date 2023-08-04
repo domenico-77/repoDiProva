@@ -40,6 +40,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Controlla se ci sono state altre esecuzioni di CommitExtractor e recupera i file
+      run: | 
+        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
+           echo "Questa è la prima esecuzione."
+        else
+           echo "Ci sono state altre esecuzioni, recupero i file..."
+           mkdir -p developersInactivityAnalysis/logs
+           mkdir -p developersInactivityAnalysis/Organizations
+           mv output/Commit_Extraction_github.log developersInactivityAnalysis/logs
+           mv output/github developersInactivityAnalysis/Organizations 
+        fi
+
     - name: Run Python script CommitExtractor.py
       run: python3 developersInactivityAnalysis/Extractors/CommitExtractor.py github-linguist/linguist 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
       timeout-minutes: 340
