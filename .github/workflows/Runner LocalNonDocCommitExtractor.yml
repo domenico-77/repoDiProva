@@ -39,6 +39,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Controlla se ci sono state altre esecuzioni di LocalNonDocCommitExtractor e recupera i file
+      run: | 
+        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
+           echo "Questa è la prima esecuzione."
+        else
+           echo "Ci sono state altre esecuzioni, recupero i file..."
+           mkdir -p developersInactivityAnalysis/A80_Results/linguist
+           mv output/linguist/commits.csv developersInactivityAnalysis/A80_Results/linguist
+        fi
+
     - name: Run Python script
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
       timeout-minutes: 340
