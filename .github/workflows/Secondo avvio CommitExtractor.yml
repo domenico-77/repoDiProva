@@ -41,7 +41,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: sposta da appoggio ad developersInactivityAnalysis/A80_Results/linguist
+    - name: sposta da appoggio a developersInactivityAnalysis
       run: |
          mkdir -p developersInactivityAnalysis/logs
          mkdir -p developersInactivityAnalysis/Organizations
