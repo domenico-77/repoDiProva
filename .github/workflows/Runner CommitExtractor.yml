@@ -53,8 +53,8 @@ jobs:
           echo "La directory 'appoggio' non esiste."
         fi
         mkdir appoggio
-        mv developersInactivityAnalysis/logs/Commit_Extraction_organization.log appoggio
-        mv developersInactivityAnalysis/Organizations appoggio
+        mv developersInactivityAnalysis/logs/Commit_Extraction_github.log appoggio
+        mv developersInactivityAnalysis/Organizations/github appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git add appoggio
@@ -70,6 +70,8 @@ jobs:
            rm -r output/MinecraftForge
            mv developersInactivityAnalysis/A80_Results/linguist output
         fi
+        rm -r appoggio/logs
+        rm -r appoggio/github
 
     - name: Commit changes
       run: |        
