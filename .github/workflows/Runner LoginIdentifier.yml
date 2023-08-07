@@ -55,16 +55,6 @@ jobs:
         mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
         python3 LoginIdentifier.py github-linguist/linguist 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
       timeout-minutes: 340
-      
-    - name: Salva i dati temporanei nella cartella di appoggio
-      if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
-      run: |  
-        mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv appoggio
-        git config --local user.name "domenico-77"
-        git config --local user.email "d.vicenti1@studenti.uniba.it"
-        git add appoggio
-        git commit -m "Aggiunto in appoggio login_map.csv"
-        git push
         
     - name: Move CSV file to main repository
       run: | 
