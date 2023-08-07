@@ -47,7 +47,7 @@ jobs:
            echo "Questa è la prima esecuzione."
         else
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/linguist/login_map.csv developersInactivityAnalysis/A80_Results/linguist 
+           mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist 
         fi
 
     - name: Run Python script CommitExtractor.py
@@ -71,7 +71,7 @@ jobs:
         if [ -f "output/login_map.csv" ]; then
            mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         else
-           rm output/linguist/login_map.csv
+           rm output/login_map.csv
            mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         fi
 
