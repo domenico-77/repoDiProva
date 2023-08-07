@@ -42,16 +42,18 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di LoginIdentifier e recupera i file
       run: | 
+        mkdir -p developersInactivityAnalysis/A80_Results/linguist
         if [ -f "output/login_map.csv" ]; then
            echo "Questa è la prima esecuzione."
         else
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mkdir -p developersInactivityAnalysis/A80_Results/linguist
            mv output/linguist/login_map.csv developersInactivityAnalysis/A80_Results/linguist 
         fi
 
     - name: Run Python script CommitExtractor.py
-      run: python3 LoginIdentifier.py github-linguist/linguist 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
+      run: |
+        mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
+        python3 LoginIdentifier.py github-linguist/linguist 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
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
@@ -63,18 +65,14 @@ jobs:
         git add appoggio
         git commit -m "Aggiunto in appoggio login_map.csv"
         git push
-
-#==================================================da qua sotto riprendi a modificare==============================================================================
+        
     - name: Move CSV file to main repository
       run: | 
-        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
-           mv developersInactivityAnalysis/logs/Commit_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+        if [ -f "output/login_map.csv" ]; then
+           mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         else
-           rm -r output/github
-           rm output/Commit_Extraction_github.log
-           mv developersInactivityAnalysis/logs/Commit_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+           rm output/linguist/login_map.csv
+           mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         fi
 
     - name: Commit changes
@@ -83,5 +81,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine estrazione, salvataggio di Commit_Extraction_github.log e /github in output"
+        git commit -m "Fine LoginIdentifier, salvataggio di login_map.csv in output"
         git push
