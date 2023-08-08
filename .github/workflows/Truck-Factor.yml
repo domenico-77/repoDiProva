@@ -12,10 +12,10 @@ jobs:
     - name: Checkout main repo
       uses: actions/checkout@v3
       
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.x   
+   # - name: Set up Python
+  #   uses: actions/setup-python@v4
+  #    with:
+  #      python-version: 3.x   
         
     - name: Clone repository developersInactivityAnalysis
       run: |
@@ -56,7 +56,6 @@ jobs:
          export TERM=xterm
          git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
          
-         echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
          
          chmod +x developersInactivityAnalysis/TruckFactor/commit_log_script.sh
          sh developersInactivityAnalysis/TruckFactor/commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
