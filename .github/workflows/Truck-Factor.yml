@@ -20,22 +20,22 @@ jobs:
     - name: Clone repository developersInactivityAnalysis
       run: |
         git clone -b tubvic https://github.com/domenico-77/developersInactivityAnalysis.git
-        cd developersInactivityAnalysis
+  #      cd developersInactivityAnalysis
       
       
-    - name: Cache Python dependencies
-      uses: actions/cache@v3
-      id: cache-pip
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-python-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-python-
+  #  - name: Cache Python dependencies
+  #    uses: actions/cache@v3
+  #    id: cache-pip
+  #    with:
+  #      path: ~/.cache/pip
+  #      key: ${{ runner.os }}-python-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+  #      restore-keys: |
+  #        ${{ runner.os }}-python-
 
-    - name: Install Python dependencies
-      run: 
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+  #  - name: Install Python dependencies
+  #    run: 
+  #      python -m pip install --upgrade pip
+  #      pip install -r requirements.txt
 
         
     - name: install ruby
@@ -53,6 +53,7 @@ jobs:
     - name: Run .sh script
       run: |
          mkdir -p developersInactivityAnalysis/Local_Repositories
+         export TERM=xterm
          git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
          
          echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
