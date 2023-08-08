@@ -1,4 +1,4 @@
-2023-08-08 11:05:21 ERROR GitTruckFactor:154 - Load configuration info aborted!
+2023-08-08 17:10:57 ERROR GitTruckFactor:154 - Load configuration info aborted!
 java.io.FileNotFoundException: config.properties (No such file or directory)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
@@ -6,19 +6,14 @@ java.io.FileNotFoundException: config.properties (No such file or directory)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
 	at aserg.gtf.GitTruckFactor.loadConfiguration(GitTruckFactor.java:146)
 	at aserg.gtf.GitTruckFactor.main(GitTruckFactor.java:47)
-2023-08-08 11:05:21 WARN  GitTruckFactor:67 - Not possible to read repo_info/filtered-files.txt file. File filter step will not be executed!
-2023-08-08 11:05:21 WARN  GitTruckFactor:73 - Not possible to read repo_info/alias.txt file. Aliases treating step will not be executed!
-2023-08-08 11:05:21 WARN  GitTruckFactor:79 - Not possible to read repo_info/modules.txt file. No modules info will be setted!
-2023-08-08 11:05:21 INFO  Extracting logCommits...  developersInactivityAnalysis/Local_Repositories/linguist/
-2023-08-08 11:05:21 ERROR GitTruckFactor:97 - TF calculation aborted!
-java.lang.Exception: File not found: developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log
-	at aserg.gtf.task.extractor.GitLogExtractor.execute(GitLogExtractor.java:73)
-	at aserg.gtf.GitTruckFactor.getTFInfo(GitTruckFactor.java:114)
+2023-08-08 17:10:57 WARN  GitTruckFactor:67 - Not possible to read repo_info/filtered-files.txt file. File filter step will not be executed!
+2023-08-08 17:10:57 WARN  GitTruckFactor:73 - Not possible to read repo_info/alias.txt file. Aliases treating step will not be executed!
+2023-08-08 17:10:57 WARN  GitTruckFactor:79 - Not possible to read repo_info/modules.txt file. No modules info will be setted!
+2023-08-08 17:10:57 INFO  Extracting logCommits...  linguist/
+2023-08-08 17:10:57 INFO  github-linguist/linguist: Extracting logCommitFiles...
+2023-08-08 17:10:57 INFO  github-linguist/linguist: Extracting file information...
+2023-08-08 17:10:57 INFO  github-linguist/linguist: Extracting and calculating authorship information...
+2023-08-08 17:10:57 ERROR GitTruckFactor:97 - TF calculation aborted!
+java.lang.NullPointerException
+	at aserg.gtf.GitTruckFactor.getTFInfo(GitTruckFactor.java:139)
 	at aserg.gtf.GitTruckFactor.main(GitTruckFactor.java:94)
-Caused by: java.io.FileNotFoundException: developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log (No such file or directory)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
-	at aserg.gtf.task.extractor.GitLogExtractor.execute(GitLogExtractor.java:38)
-	... 2 more
