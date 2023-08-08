@@ -49,10 +49,14 @@ jobs:
        gem install rugged github-linguist --user-install --no-document
          
     - name: Set up environment variable with repository path
-      run: echo "REPO_PATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV 
+      run: |
+       echo "REPO_PATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+       echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
+      
 
     - name: Run .sh script
       run: |
+         export TERM=xterm
          git clone https://github.com/github-linguist/linguist.git
          
          chmod +x developersInactivityAnalysis/TruckFactor/commit_log_script.sh
@@ -61,13 +65,13 @@ jobs:
          chmod +x developersInactivityAnalysis/TruckFactor/linguist_script.sh
          sh developersInactivityAnalysis/TruckFactor/linguist_script.sh $REPO_PATH
          
-         java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+         java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar $REPO_PATH github-linguist/linguist > output/TF_report.txt
       timeout-minutes: 340
 
 
     - name: Move file to main repository
       run: | 
-        mv developersInactivityAnalysis/Local_Repositories/linguist output
+        mv $REPO_PATH output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
