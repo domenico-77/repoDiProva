@@ -71,7 +71,7 @@ jobs:
 
     - name: Move file to main repository
       run: | 
-        mv $REPO_PATH output
+        mv $REPO_PATH/linguist output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
       #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
