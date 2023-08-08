@@ -52,6 +52,7 @@ jobs:
 
     - name: Run sh script
       run: |
+        mkdir -p developersInactivityAnalysis/Local_Repositories
         git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
         echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
         cd developersInactivityAnalysis/TruckFactor
