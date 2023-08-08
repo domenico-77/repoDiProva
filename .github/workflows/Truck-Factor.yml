@@ -50,15 +50,21 @@ jobs:
          
     
 
-    - name: Run sh script
+    - name: Run .sh script
       run: |
-        mkdir -p developersInactivityAnalysis/Local_Repositories
-        git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
-        echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
-        cd developersInactivityAnalysis/TruckFactor
-        sh commit_log_script.sh ../Local_Repositories/linguist
-        sh linguist_script.sh ../Local_Repositories/linguist
-        java -jar gittruckfactor.jar ../Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+         mkdir -p developersInactivityAnalysis/Local_Repositories
+         git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
+         
+         echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
+         
+         chmod +x developersInactivityAnalysis/TruckFactor/commit_log_script.sh
+         sh developersInactivityAnalysis/TruckFactor/commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         
+         chmod +x developersInactivityAnalysis/TruckFactor/linguist_script.sh
+         sh developersInactivityAnalysis/TruckFactor/linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         
+         java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+      timeout-minutes: 340
 
 
     - name: Move file to main repository
