@@ -59,12 +59,20 @@ jobs:
          java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
       timeout-minutes: 340
 
+    - name: Move file to main repository
+      run: | 
+         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfile.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
+
+
     - name: Commit changes
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
-        git add output/linguist
+        git add output
         git commit -m "Terminato Truck-Factor, aggiunto TF_report.txt in output"
         git push
         
