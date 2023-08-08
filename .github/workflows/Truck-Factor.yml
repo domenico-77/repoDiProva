@@ -48,21 +48,18 @@ jobs:
        sudo apt-get install -y build-essential cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev
        gem install rugged github-linguist --user-install --no-document
          
-    
+    - name: Set up environment variable with repository path
+      run: echo "REPO_PATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV 
 
     - name: Run .sh script
       run: |
-         cd developersInactivityAnalysis
-         mkdir Local_Repositories
-         export TERM=xterm
-         git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
+         git clone https://github.com/github-linguist/linguist.git
          
-         cd TruckFactor
          chmod +x commit_log_script.sh
-         sh ./commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         sh ./commit_log_script.sh $REPO_PATH
          
          chmod +x linguist_script.sh
-         sh ./linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         sh ./linguist_script.sh $REPO_PATH
          
          java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
       timeout-minutes: 340
