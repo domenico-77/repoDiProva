@@ -70,10 +70,11 @@ jobs:
 
     - name: Move file to main repository
       run: | 
-         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
-         mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
-         mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
-         mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
+        mv developersInactivityAnalysis/Local_Repositories/linguist output
+      #   mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
+      #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
+      #   mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
+      #   mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
 
 
     - name: Commit changes
