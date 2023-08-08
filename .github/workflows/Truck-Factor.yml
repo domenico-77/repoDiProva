@@ -56,6 +56,16 @@ jobs:
          echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
          developersInactivityAnalysis/TruckFactor/commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
          developersInactivityAnalysis/TruckFactor/linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         java -jar gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
       timeout-minutes: 340
+
+    - name: Commit changes
+      run: |        
+        git config --local user.name "domenico-77"
+        git config --local user.email "d.vicenti1@studenti.uniba.it"
+        git pull
+        git add output/linguist
+        git commit -m "Terminato Truck-Factor, aggiunto TF_report.txt in output"
+        git push
         
   
