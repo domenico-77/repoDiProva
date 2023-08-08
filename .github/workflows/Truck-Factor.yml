@@ -52,7 +52,8 @@ jobs:
 
     - name: Run .sh script
       run: |
-         mkdir -p developersInactivityAnalysis/Local_Repositories
+         cd developersInactivityAnalysis
+         mkdir Local_Repositories
          export TERM=xterm
          git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
          
