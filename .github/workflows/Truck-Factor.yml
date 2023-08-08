@@ -50,7 +50,7 @@ jobs:
          
     
 
-    - name: Run sh script
+    - name: Run .sh script
       run: |
          git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
          echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
@@ -61,7 +61,7 @@ jobs:
 
     - name: Move file to main repository
       run: | 
-         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfile.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
          mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
          mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
          mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
