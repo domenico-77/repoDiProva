@@ -60,12 +60,12 @@ jobs:
         java -jar gittruckfactor.jar ../Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
 
 
-   # - name: Move file to main repository
-   #   run: | 
-   #      mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
-   #      mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
-   #      mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
-   #      mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
+    - name: Move file to main repository
+      run: | 
+         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
+         mv developersInactivityAnalysis/Local_Repositories/linguist/filelist.log output
 
 
     - name: Commit changes
