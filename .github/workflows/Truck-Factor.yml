@@ -1,0 +1,63 @@
+name: Truck-Factor
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Runner LoginIdentifier"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+    - name: Checkout main repo
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x   
+        
+    - name: Clone repository developersInactivityAnalysis
+      run: |
+        git clone -b tubvic https://github.com/domenico-77/developersInactivityAnalysis.git
+        cd developersInactivityAnalysis
+      
+      
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      id: cache-pip
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-python-${{ hashFiles('developersInactivityAnalysis/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-python-
+
+    - name: Install Python dependencies
+      run: 
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+        
+    - name: install ruby
+      run: |
+       sudo apt install ruby
+       sudo apt-get update -y
+       sudo apt-get upgrade -y
+       sudo apt-get install -y ruby-rugged
+       sudo apt-get install -y ruby-dev
+       sudo apt-get install -y build-essential cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev
+       gem install rugged github-linguist --no-document
+         
+    
+
+    - name: Run sh script
+      run: |
+         git clone https://github.com/github-linguist/linguist.git developersInactivityAnalysis/Local_Repositories
+         ./linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+      timeout-minutes: 340
+        
+  
