@@ -65,12 +65,12 @@ jobs:
          cd TruckFactor
          
          chmod +x commit_log_script.sh
-         ./commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         ./commit_log_script.sh ../Local_Repositories/linguist
          
          chmod +x linguist_script.sh
-         ./linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         ./linguist_script.sh ../Local_Repositories/linguist
          
-         java -jar gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+         java -jar gittruckfactor.jar ../Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
 
 
     - name: Move file to main repository
