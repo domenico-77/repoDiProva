@@ -60,14 +60,17 @@ jobs:
 
          mkdir -p developersInactivityAnalysis/Local_Repositories
          mv linguist developersInactivityAnalysis/Local_Repositories/
+
+         cd developersInactivityAnalysis
+         cd TruckFactor
          
-         chmod +x developersInactivityAnalysis/TruckFactor/commit_log_script.sh
-         sh developersInactivityAnalysis/TruckFactor/commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         chmod +x commit_log_script.sh
+         ./commit_log_script.sh developersInactivityAnalysis/Local_Repositories/linguist
          
-         chmod +x developersInactivityAnalysis/TruckFactor/linguist_script.sh
-         sh developersInactivityAnalysis/TruckFactor/linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
+         chmod +x linguist_script.sh
+         ./linguist_script.sh developersInactivityAnalysis/Local_Repositories/linguist
          
-         java -jar developersInactivityAnalysis/TruckFactor/gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+         java -jar gittruckfactor.jar developersInactivityAnalysis/Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
 
 
     - name: Move file to main repository
