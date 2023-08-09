@@ -70,11 +70,12 @@ jobs:
          chmod +x linguist_script.sh
          ./linguist_script.sh ../Local_Repositories/linguist
          
-         java -jar gittruckfactor.jar ../Local_Repositories/linguist github-linguist/linguist > output/TF_report.txt
+         java -jar gittruckfactor.jar ../Local_Repositories/linguist github-linguist/linguist > ../Local_Repositories/linguist/TF_report.txt
 
 
     - name: Move file to main repository
       run: | 
+        mv developersInactivityAnalysis/Local_Repositories/linguist/TF_report.txt output
         mv developersInactivityAnalysis/Local_Repositories/linguist/linguistfiles.log output
         mv developersInactivityAnalysis/Local_Repositories/linguist/commitinfo.log output
         mv developersInactivityAnalysis/Local_Repositories/linguist/commitfileinfo.log output
