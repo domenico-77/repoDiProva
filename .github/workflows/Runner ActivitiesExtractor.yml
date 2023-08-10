@@ -40,7 +40,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di CommitExtractor e recupera i file
+    - name: Controlla se ci sono state altre esecuzioni di ActivitiesExtractor e recupera i file
       run: | 
         if [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
