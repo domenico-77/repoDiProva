@@ -1,6 +1,7 @@
 name: Runner LoginIdentifier
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["Runner LocalNonDocCommitExtractor", "Secondo avvio LocalNonDocCommitExtractor"]
     types:
