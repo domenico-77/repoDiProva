@@ -1,6 +1,7 @@
 name: Runner GetA80Lists
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["Runner UnmaskAliases"]
     types:
