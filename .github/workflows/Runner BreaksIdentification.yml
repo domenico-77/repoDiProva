@@ -48,8 +48,7 @@ jobs:
         
         if [ -f "output/Breaks_Identification.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/Breaks_Identification.log developersInactivityAnalysis/logs
-           mv output/Dev_Breaks developersInactivityAnalysis/Organizations/github         
+           mv output/Breaks_Identification.log developersInactivityAnalysis/logs         
         else
            echo "Questa è la prima esecuzione."
         fi
@@ -69,14 +68,14 @@ jobs:
         
     - name: Move CSV file to main repository
       run: | 
+        rm -r output/github
         if [ -f "output/Breaks_Identification.log" ]; then
            rm output/Breaks_Identification.log
-           rm -r output/Dev_Breaks
            mv developersInactivityAnalysis/logs/Breaks_Identification.log output
-           mv developersInactivityAnalysis/Organizations/github/Dev_Breaks output
+           mv developersInactivityAnalysis/Organizations/github output
         else
            mv developersInactivityAnalysis/logs/Breaks_Identification.log output
-           mv developersInactivityAnalysis/Organizations/github/Dev_Breaks output
+           mv developersInactivityAnalysis/Organizations/github output
         fi
 
     - name: Commit changes
