@@ -44,24 +44,24 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/A80_Results/linguist
         if [ -f "output/A80_devs.csv" ]; then
-           echo "Questa è la prima esecuzione."
-        else
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/A80_devs.csv developersInactivityAnalysis/A80_Results/linguist 
+           mv output/A80_devs.csv developersInactivityAnalysis/A80_Results/linguist         
+        else
+           echo "Questa è la prima esecuzione."
         fi
 
     - name: Run Python script CommitExtractor.py
       run: |
         mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
         python3 LoginIdentifier.py github-linguist/linguist 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
-      timeout-minutes: 340
+
         
     - name: Move CSV file to main repository
       run: | 
         if [ -f "output/A80_devs.csv" ]; then
+           rm output/A80_devs.csv
            mv developersInactivityAnalysis/A80_Results/linguist/A80_devs.csv output
         else
-           rm output/A80_devs.csv
            mv developersInactivityAnalysis/A80_Results/linguist/A80_devs.csv output
         fi
 
