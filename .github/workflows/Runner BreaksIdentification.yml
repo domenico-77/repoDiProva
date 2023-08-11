@@ -40,7 +40,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di LoginIdentifier e recupera i file
+    - name: Controlla se ci sono state altre esecuzioni di BreaksIdentification e recupera i file
       run: | 
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/logs
@@ -84,5 +84,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine GetA80Lists, salvataggio di A80_devs.csv in output"
+        git commit -m "Fine BreaksIdentification, salvataggio di /github e Breaks_Identification.log in output"
         git push
