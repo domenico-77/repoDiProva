@@ -3,7 +3,7 @@ name: Runner CommitExtractor
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Runner LocalNonDocCommitExtractor", "Secondo avvio LocalNonDocCommitExtractor"]
+    workflows: ["Runner UnmaskAliases"]
     types:
       - completed
 
