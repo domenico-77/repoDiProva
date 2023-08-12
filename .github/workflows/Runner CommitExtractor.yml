@@ -43,14 +43,14 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di CommitExtractor e recupera i file
       run: | 
-        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
-           echo "Questa è la prima esecuzione."
-        else
+        mkdir -p developersInactivityAnalysis/logs
+        mkdir -p developersInactivityAnalysis/Organizations
+        if [ -f "output/Commit_Extraction_github.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mkdir -p developersInactivityAnalysis/logs
-           mkdir -p developersInactivityAnalysis/Organizations
            mv output/Commit_Extraction_github.log developersInactivityAnalysis/logs
-           mv output/github developersInactivityAnalysis/Organizations 
+           mv output/github developersInactivityAnalysis/Organizations
+        else
+           echo "Questa è la prima esecuzione."
         fi
 
     - name: Run Python script CommitExtractor.py
