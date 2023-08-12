@@ -43,10 +43,10 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di ActivitiesExtractor e recupera i file
       run: | 
+        mkdir -p developersInactivityAnalysis/logs
+        mkdir -p developersInactivityAnalysis/Organizations
         if [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mkdir -p developersInactivityAnalysis/logs
-           mkdir -p developersInactivityAnalysis/Organizations
            mv output/Activities_Extraction_github.log developersInactivityAnalysis/logs
            mv output/github developersInactivityAnalysis/Organizations       
         else
