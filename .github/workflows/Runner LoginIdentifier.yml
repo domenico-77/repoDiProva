@@ -55,7 +55,7 @@ jobs:
       run: |
         mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
         python3 LoginIdentifier.py github-linguist/linguist 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
-      timeout-minutes: 340
+
         
     - name: Move CSV file to main repository
       run: | 
