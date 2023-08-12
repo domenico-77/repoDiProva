@@ -45,10 +45,10 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/logs
         mkdir -p developersInactivityAnalysis/Organizations
+        mv output/github developersInactivityAnalysis/Organizations
         if [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/Activities_Extraction_github.log developersInactivityAnalysis/logs
-           mv output/github developersInactivityAnalysis/Organizations       
+           mv output/Activities_Extraction_github.log developersInactivityAnalysis/logs       
         else
            echo "Questa è la prima esecuzione."
         fi
