@@ -41,7 +41,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di LoginIdentifier e recupera i file
+    - name: Controlla se ci sono state altre esecuzioni di UnmaskAliases e recupera i file
       run: | 
         mkdir -p developersInactivityAnalysis/A80_Results/linguist
         if [ -f "output/unmasking_results.csv" ]; then
@@ -51,11 +51,11 @@ jobs:
            mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist 
         fi
 
-    - name: Run Python script CommitExtractor.py
+    - name: Run Python script UnmaskAliases.py
       run: |
         mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
         python3 LoginIdentifier.py github-linguist/linguist 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
-      timeout-minutes: 340
+
         
     - name: Move CSV file to main repository
       run: | 
