@@ -3,7 +3,7 @@ name: Runner BreaksIdentification
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Runner UnmaskAliases"]
+    workflows: ["Runner ActivitiesExtractor", "Secondo avvio ActivitiesExtractor"]
     types:
       - completed
 
