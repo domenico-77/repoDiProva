@@ -60,8 +60,8 @@ jobs:
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
+        rm -r appoggio/github
         if [ -f "appoggio/Activities_Extraction_github.log" ]; then
-           rm -r appoggio/github
            rm appoggio/Activities_Extraction_github.log
            mv developersInactivityAnalysis/logs/Activities_Extraction_github.log appoggio
            mv developersInactivityAnalysis/Organizations/github appoggio        
@@ -78,8 +78,8 @@ jobs:
 
     - name: Move CSV file to main repository
       run: | 
+        rm -r output/github
         if [ -f "output/Activities_Extraction_github.log" ]; then
-           rm -r output/github
            rm output/Activities_Extraction_github.log
            mv developersInactivityAnalysis/logs/Activities_Extraction_github.log output
            mv developersInactivityAnalysis/Organizations/github output
