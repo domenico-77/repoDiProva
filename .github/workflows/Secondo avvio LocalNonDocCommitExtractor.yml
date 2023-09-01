@@ -70,7 +70,7 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         if [ -z "$(find output/MinecraftForge -mindepth 1 -maxdepth 1)" ]; then
-           mv developersInactivityAnalysis/A80_Results/MinecraftForge output
+           mv developersInactivityAnalysis/A80_Results/linguist output
         else
            rm -r output/MinecraftForge
            mv developersInactivityAnalysis/A80_Results/linguist output
