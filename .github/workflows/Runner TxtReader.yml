@@ -38,9 +38,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Python script
-      run: |
-        cd TruckFactor
-        python3 TxtReader.py linguist
+      run: python3 developersInactivityAnalysis/TruckFactor/TxtReader.py linguist
 
 
     - name: Commit changes
