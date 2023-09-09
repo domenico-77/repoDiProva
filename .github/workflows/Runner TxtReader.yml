@@ -2,6 +2,10 @@ name: Runner TxtReader
 
 on:
   workflow_dispatch:
+  workflow_run:
+   workflows: ["Truck-Factor"]
+   types:
+    - completed
 
 
 jobs:
