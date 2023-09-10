@@ -41,7 +41,7 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di LocalNonDocCommitExtractor e recupera i file
       run: | 
-        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
+        if [ -z "$(find output/linguist -mindepth 1 -maxdepth 1)" ]; then
            echo "Questa è la prima esecuzione."
         else
            echo "Ci sono state altre esecuzioni, recupero i file..."
