@@ -55,7 +55,7 @@ jobs:
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
-        mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
+        cp output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
         python3 developersInactivityAnalysis/CoreSelection/GetA80Lists.py github/linguist $MY_SECRET
 
         
