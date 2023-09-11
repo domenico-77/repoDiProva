@@ -62,9 +62,9 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         if [ -f "output/login_map.csv" ]; then
+           rm output/login_map.csv
            mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         else
-           rm output/login_map.csv
            mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
         fi
 
