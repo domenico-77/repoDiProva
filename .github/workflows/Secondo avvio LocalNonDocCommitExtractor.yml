@@ -53,12 +53,12 @@ jobs:
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
-        if [ -d "appoggio" ]; then
-          rm -r appoggio
+        if [ -d "appoggio/linguist" ]; then
+          rm -r appoggio/linguist
         else
-          echo "La directory 'appoggio' non esiste."
+          echo "La directory 'linguist' in 'appoggio' non esiste."
         fi
-        mkdir appoggio
+        mkdir -p appoggio
         mv developersInactivityAnalysis/A80_Results/linguist appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
@@ -69,10 +69,10 @@ jobs:
 
     - name: Move CSV file to main repository
       run: | 
-        if [ -z "$(find output/MinecraftForge -mindepth 1 -maxdepth 1)" ]; then
+        if [ -z "$(find output/linguist -mindepth 1 -maxdepth 1)" ]; then
            mv developersInactivityAnalysis/A80_Results/linguist output
         else
-           rm -r output/MinecraftForge
+           rm -r output/linguist
            mv developersInactivityAnalysis/A80_Results/linguist output
         fi
 
