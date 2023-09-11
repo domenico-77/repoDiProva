@@ -44,6 +44,7 @@ jobs:
     - name: Controlla se ci sono state altre esecuzioni di GetA80Lists e recupera i file
       run: | 
         mkdir -p developersInactivityAnalysis/A80_Results/linguist
+        mkdir -p developersInactivityAnalysis/Organizations/github
         if [ -f "output/A80_devs.csv" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
            mv output/A80_devs.csv developersInactivityAnalysis/A80_Results/linguist         
@@ -55,6 +56,7 @@ jobs:
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
+        cp output/linguist developersInactivityAnalysis/Organizations/github
         cp output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
         python3 developersInactivityAnalysis/CoreSelection/GetA80Lists.py github/linguist $MY_SECRET
 
