@@ -52,17 +52,19 @@ jobs:
         fi
 
     - name: Run Python script UnmaskAliases.py
+      env:
+         MY_SECRET: ${{ secrets.TOKEN }}
       run: |
         mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 LoginIdentifier.py github-linguist/linguist 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
+        python3 developersInactivityAnalysis/CoreSelection/UnmaskAliases.py github/linguist $MY_SECRET
 
         
     - name: Move CSV file to main repository
       run: | 
         if [ -f "output/unmasking_results.csv" ]; then
-           mv developersInactivityAnalysis/A80_Results/linguist/unmasking_results.csv output
-        else
            rm output/unmasking_results.csv
+           mv developersInactivityAnalysis/A80_Results/linguist/unmasking_results.csv output          
+        else
            mv developersInactivityAnalysis/A80_Results/linguist/unmasking_results.csv output
         fi
 
