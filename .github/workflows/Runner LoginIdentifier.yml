@@ -53,7 +53,7 @@ jobs:
 
     - name: Run Python script CommitExtractor.py
       env:
-         MY_SECRET: ${{ secrets.token }}
+         MY_SECRET: ${{ secrets.TOKEN }}
       run: |
         mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
         python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist $MY_SECRET
