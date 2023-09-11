@@ -54,7 +54,7 @@ jobs:
     - name: Run Python script CommitExtractor.py
       run: |
         mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist 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
+        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist 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
 
         
     - name: Move CSV file to main repository
