@@ -45,10 +45,10 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/A80_Results/linguist
         if [ -f "output/login_map.csv" ]; then
-           echo "Questa è la prima esecuzione."
-        else
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist 
+           mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
+        else
+            echo "Questa è la prima esecuzione."
         fi
 
     - name: Run Python script CommitExtractor.py
