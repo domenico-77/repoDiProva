@@ -52,9 +52,11 @@ jobs:
         fi
 
     - name: Run Python script CommitExtractor.py
+      env:
+         MY_SECRET: ${{ secrets.token }}
       run: |
         mv output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist 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
+        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist $MY_SECRET
 
         
     - name: Move CSV file to main repository
