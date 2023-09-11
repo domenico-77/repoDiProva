@@ -55,7 +55,7 @@ jobs:
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
-        mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
+        cp output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
         python3 developersInactivityAnalysis/CoreSelection/UnmaskAliases.py github/linguist $MY_SECRET
 
         
