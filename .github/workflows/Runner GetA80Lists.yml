@@ -52,9 +52,11 @@ jobs:
         fi
 
     - name: Run Python script GetA80Lists.py
+      env:
+         MY_SECRET: ${{ secrets.TOKEN }}
       run: |
         mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 LoginIdentifier.py github-linguist/linguist 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
+        python3 developersInactivityAnalysis/CoreSelection/GetA80Lists.py github/linguist $MY_SECRET
 
         
     - name: Move CSV file to main repository
