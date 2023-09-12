@@ -56,7 +56,7 @@ jobs:
     - name: Run Python script CommitExtractor.py
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
-      run: python3 developersInactivityAnalysis/Extractors/CommitExtractor.py github-linguist/linguist $MY_SECRET
+      run: python3 developersInactivityAnalysis/Extractors/CommitExtractor.py github/linguist $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
