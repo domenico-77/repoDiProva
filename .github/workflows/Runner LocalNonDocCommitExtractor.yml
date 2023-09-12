@@ -73,12 +73,9 @@ jobs:
       run: | 
         if [ -z "$(find output/linguist -mindepth 1 -maxdepth 1)" ]; then
            mv developersInactivityAnalysis/A80_Results/linguist output
-           mv developersInactivityAnalysis/Organizations/github output
         else
            rm -r output/linguist
-
            mv developersInactivityAnalysis/A80_Results/linguist output
-           mv developersInactivityAnalysis/Organizations/github output
         fi
         rm -r appoggio/linguist
 
