@@ -83,8 +83,7 @@ jobs:
            mv developersInactivityAnalysis/logs/Commit_Extraction_github.log output
            mv developersInactivityAnalysis/Organizations/github output
         fi
-        rm appoggio/Commit_Extraction_github.log
-        rm -r appoggio/github
+
 
     - name: Commit changes
       run: |        
