@@ -48,8 +48,10 @@ jobs:
          mv appoggio/Activities_Extraction_github.log developersInactivityAnalysis/logs
          mv appoggio/github developersInactivityAnalysis/Organizations
       
-    - name: Run Python script
-      run:  python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github-linguist/linguist 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
+    - name: Run Python script ActivitiesExtractor.py
+      env:
+        MY_SECRET: ${{ secrets.TOKEN }}
+      run: python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
