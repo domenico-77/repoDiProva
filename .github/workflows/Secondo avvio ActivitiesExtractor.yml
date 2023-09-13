@@ -51,7 +51,9 @@ jobs:
     - name: Run Python script ActivitiesExtractor.py
       env:
         MY_SECRET: ${{ secrets.TOKEN }}
-      run: python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
+      run: |
+        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
+        python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
