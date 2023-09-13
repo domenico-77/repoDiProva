@@ -1,5 +1,9 @@
+.devcontainer/Dockerfile
+.devcontainer/devcontainer.json
+.devcontainer/onCreateCommand.sh
 .dockerignore
 .editorconfig
+.gitattributes
 .github/CODEOWNERS
 .github/ISSUE_TEMPLATE/bug_report.md
 .github/ISSUE_TEMPLATE/config.yml
@@ -215,6 +219,10 @@ samples/BlitzBasic/HalfAndDouble.bb
 samples/BlitzBasic/LList.bb
 samples/BlitzBasic/PObj.bb
 samples/BlitzMax/sample.bmx
+samples/Bluespec BH/CGetPut.bs
+samples/Bluespec BH/COBS.bs
+samples/Bluespec BH/TL.bs
+samples/Bluespec BH/TbTL.bs
 samples/Bluespec/TL.bsv
 samples/Bluespec/TbTL.bsv
 samples/Boogie/Bubble.bpl
@@ -785,11 +793,13 @@ samples/GLSL/gbuffers_textured_lit.fsh
 samples/GLSL/gbuffers_textured_lit.vsh
 samples/GLSL/islandScene.glsl
 samples/GLSL/islandScene.shader
+samples/GLSL/main.vs
 samples/GLSL/miss.rmiss
 samples/GLSL/myfragment.frg
 samples/GLSL/myvertex.vrx
 samples/GLSL/pntriangles.tesc
 samples/GLSL/pntriangles.tese
+samples/GLSL/project.vs
 samples/GLSL/recurse1.frag
 samples/GLSL/recurse1.fs
 samples/GLSL/shader.fp
@@ -914,6 +924,7 @@ samples/Gosu/Ronin.gs
 samples/Gosu/hello.vark
 samples/Grace/ackerman_function.grace
 samples/Grace/grace_IDE.grace
+samples/Gradle Kotlin DSL/build.gradle.kts
 samples/Gradle/build.gradle
 samples/Gradle/builder.gradle
 samples/Grammatical Framework/Foods.gf
@@ -1163,6 +1174,7 @@ samples/JSON with Comments/filenames/language-configuration.json
 samples/JSON with Comments/filenames/tsconfig.json
 samples/JSON with Comments/filenames/tslint.json
 samples/JSON with Comments/jade.sublime-completions
+samples/JSON with Comments/plyr.code-workspace
 samples/JSON with Comments/vue.code-snippets
 samples/JSON/2ea73365-b6f1-4bd1-a454-d57a67e50684.yy
 samples/JSON/4DPopGit.4DProject
@@ -1786,6 +1798,8 @@ samples/OpenSCAD/simple.scad
 samples/OpenStep Property List/TypewriterInfo.plist
 samples/OpenStep Property List/weathericons-regular.glyphs
 samples/Option List/filenames/.ackrc
+samples/Option List/filenames/.rspec
+samples/Option List/filenames/.yardopts
 samples/Option List/filenames/ackrc
 samples/Option List/filenames/mocha.opts
 samples/Org/org.org
@@ -2166,6 +2180,9 @@ samples/Regular Expression/url.regex
 samples/Ren'Py/example.rpy
 samples/RenderScript/convolve3x3.rs
 samples/RenderScript/scenegraph_objects.rsh
+samples/Rez/Rezilla_DITL.r
+samples/Rez/dialog.r
+samples/Rez/gui_mac.r
 samples/Rich Text Format/DesktopTemplateLicense.rtf
 samples/Rich Text Format/LICENSE.rtf
 samples/Ring/hello.ring
@@ -2485,6 +2502,8 @@ samples/Sway/generic_traits.sw
 samples/Sway/struct_fns.sw
 samples/Sway/supertraits.sw
 samples/Sway/wallet.sw
+samples/Sweave/knitr-beamer.Rnw
+samples/Sweave/knitr-minimal.Rnw
 samples/Swift/section-11.swift
 samples/Swift/section-13.swift
 samples/Swift/section-15.swift
@@ -2618,6 +2637,8 @@ samples/TypeScript/classes.ts
 samples/TypeScript/conditionParser.mts
 samples/TypeScript/hello.ts
 samples/TypeScript/promisified_cp.cts
+samples/Typst/fiction.typ
+samples/Typst/letter.typ
 samples/Unity3D Asset/GapTile.mat
 samples/Unity3D Asset/Hover.anim
 samples/Unity3D Asset/Tiles.meta
@@ -2818,6 +2839,7 @@ samples/XML/demo.hzp
 samples/XML/dependency-example.depproj
 samples/XML/example-sharedproj.shproj
 samples/XML/example.ccproj
+samples/XML/example.typ
 samples/XML/filenames/.cproject
 samples/XML/fsproj-sample.fsproj
 samples/XML/holobloc-sample.res
@@ -3510,6 +3532,7 @@ vendor/grammars/r.tmbundle
 vendor/grammars/rascal-syntax-highlighting
 vendor/grammars/razor-plus
 vendor/grammars/rescript-vscode
+vendor/grammars/rez.tmbundle
 vendor/grammars/riot-syntax-highlight
 vendor/grammars/ruby-slim.tmbundle
 vendor/grammars/rust-syntax
@@ -3564,6 +3587,7 @@ vendor/grammars/sublimetext-cuda-cpp
 vendor/grammars/sublimetext-nasl
 vendor/grammars/svelte-atom
 vendor/grammars/sway-vscode-plugin
+vendor/grammars/sweave.tmbundle
 vendor/grammars/swift.tmbundle
 vendor/grammars/tcl.tmbundle
 vendor/grammars/textmate.tmbundle
@@ -3572,6 +3596,7 @@ vendor/grammars/thrift.tmbundle
 vendor/grammars/tlv-vscode
 vendor/grammars/toml.tmbundle
 vendor/grammars/turtle.tmbundle
+vendor/grammars/typst-grammar
 vendor/grammars/verilog.tmbundle
 vendor/grammars/vhdl
 vendor/grammars/vsc-fennel
@@ -3953,6 +3978,7 @@ vendor/licenses/git_submodule/r.tmbundle.dep.yml
 vendor/licenses/git_submodule/rascal-syntax-highlighting.dep.yml
 vendor/licenses/git_submodule/razor-plus.dep.yml
 vendor/licenses/git_submodule/rescript-vscode.dep.yml
+vendor/licenses/git_submodule/rez.tmbundle.dep.yml
 vendor/licenses/git_submodule/riot-syntax-highlight.dep.yml
 vendor/licenses/git_submodule/ruby-slim.tmbundle.dep.yml
 vendor/licenses/git_submodule/rust-syntax.dep.yml
@@ -4007,6 +4033,7 @@ vendor/licenses/git_submodule/sublimetext-cuda-cpp.dep.yml
 vendor/licenses/git_submodule/sublimetext-nasl.dep.yml
 vendor/licenses/git_submodule/svelte-atom.dep.yml
 vendor/licenses/git_submodule/sway-vscode-plugin.dep.yml
+vendor/licenses/git_submodule/sweave.tmbundle.dep.yml
 vendor/licenses/git_submodule/swift.tmbundle.dep.yml
 vendor/licenses/git_submodule/tcl.tmbundle.dep.yml
 vendor/licenses/git_submodule/textmate.tmbundle.dep.yml
@@ -4015,6 +4042,7 @@ vendor/licenses/git_submodule/thrift.tmbundle.dep.yml
 vendor/licenses/git_submodule/tlv-vscode.dep.yml
 vendor/licenses/git_submodule/toml.tmbundle.dep.yml
 vendor/licenses/git_submodule/turtle.tmbundle.dep.yml
+vendor/licenses/git_submodule/typst-grammar.dep.yml
 vendor/licenses/git_submodule/verilog.tmbundle.dep.yml
 vendor/licenses/git_submodule/vhdl.dep.yml
 vendor/licenses/git_submodule/vsc-fennel.dep.yml

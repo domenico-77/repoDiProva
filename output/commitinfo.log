@@ -1,3 +1,23 @@
+7ca3799b8b5f1acde1dd7a8dfb7ae849d3dfb4cd-;-Colin Seymour-;-colin@github.com-;-1694597166-;-GitHub-;-noreply@github.com-;-1694597166-;-Release-v7.27.0-6540
+3daa03314aebe4b0d02134f8025c5f0bd8025d4f-;-Colin Seymour-;-colin@github.com-;-1694596488-;-GitHub-;-noreply@github.com-;-1694596488-;-Revert-Use-ghcr.io-for-grammar-compiler-docker-container-6546
+29e811b5bb263c7956ebe2a8e9be84d7b41803de-;-Colin Seymour-;-colin@github.com-;-1694594876-;-GitHub-;-noreply@github.com-;-1694594876-;-Add-Gradle-Kotlin-DSL-6541
+6b349cfc74a361f962e37e54c5cc5c8d8ac8da06-;-Colin Seymour-;-colin@github.com-;-1694594552-;-GitHub-;-noreply@github.com-;-1694594552-;-Improve-and-document-using-Codespaces-and-Devcontainers-6539
+fd7982704b84b37ce605ae0570b5aa2217b0b2fc-;-Colin Seymour-;-colin@github.com-;-1694594536-;-GitHub-;-noreply@github.com-;-1694594536-;-Use-ghcr.io-for-grammar-compiler-docker-container-6322
+8bec00e8fb8b4c9c8d38061cd776dac10a10db72-;-Grady Weyenberg-;-gradysw@gmail.com-;-1694506208-;-GitHub-;-noreply@github.com-;-1694506208-;-Add-language-Sweave-6544
+28aa3fca237bda4ceeb15b70d867b817dff065c2-;-Michael Lohr-;-michael@lohr.dev-;-1694439788-;-GitHub-;-noreply@github.com-;-1694439788-;-Add-Typst-6379
+2fdbac7f8096c099be2b37a46b30a0fe6dfc415a-;-Martin Leduc-;-31558169+DecimalTurn@users.noreply.github.com-;-1694101066-;-GitHub-;-noreply@github.com-;-1694101066-;-Remove-redundancy-in-AsciiDoc-s-regex-pattern-6537
+826cc7dbf6acbaf9f603bc2fe38c9a93301d4830-;-Spenser Black-;-spenserblack01@gmail.com-;-1694093233-;-GitHub-;-noreply@github.com-;-1694093233-;-Create-devcontainer-configuration-6479
+9b634a089f0f429e10f204b4649bbf963b0a0cf1-;-Wladislav Artsimovich-;-60887273+FrostKiwi@users.noreply.github.com-;-1694083520-;-GitHub-;-noreply@github.com-;-1694083520-;-Add-.vs-GLSL-vertex-shader-extension-6536
+55cfb4961c1202dd1d4e94ca6623d0f81f297b66-;-Eric Gallager-;-egall@gwmail.gwu.edu-;-1694083501-;-GitHub-;-noreply@github.com-;-1694083501-;-Add-Rez-6524
+ec4435f99f89d39d834debcc77204d9f50bfd8e1-;-汪心禾-;-wangxinhe06@gmail.com-;-1694083487-;-GitHub-;-noreply@github.com-;-1694083487-;-Add-.code-workspace-to-JSON-with-Comments-6502
+108fe819bc32ef21c4ddbe05fb40c1883d98e9a5-;-Spenser Black-;-spenserblack01@gmail.com-;-1694083475-;-GitHub-;-noreply@github.com-;-1694083475-;-Mark-files-under-htmlcov-as-generated-6491
+073af2ef7848e9f4057e5f4489bbdfe11a13ee2d-;-Martin Leduc-;-31558169+DecimalTurn@users.noreply.github.com-;-1694083462-;-GitHub-;-noreply@github.com-;-1694083462-;-Cross-validation-script-Add-filter-for-extensions-6490
+f36d835a91cdacffd3d0ac26d520d1fab6444c1f-;-Imre Kristoffer Eilertsen-;-imreeil42@gmail.com-;-1694083448-;-GitHub-;-noreply@github.com-;-1694083448-;-Add-hosts-to-Host-file-aliases-6486
+e3020112db197910859b16bb7be8374fe8ac2fc7-;-Julie Schwartz-;-quark@bluespec.com-;-1694083435-;-GitHub-;-noreply@github.com-;-1694083435-;-Add-an-entry-for-Bluespec-s-other-syntax-6476
+e236e97e27dbb2604c34ca2f05ae2163f26f90cc-;-Spenser Black-;-spenserblack01@gmail.com-;-1694083425-;-GitHub-;-noreply@github.com-;-1694083425-;-Add-support-for-Ruby-Option-Lists-6474
+befa56a3ef240d48247d4e70e8f14b6c57d050fd-;-John Gardner-;-gardnerjohng@gmail.com-;-1694078766-;-GitHub-;-noreply@github.com-;-1694078766-;-Add-pikchr-as-an-alias-of-Pic-6522
+ee12e6c305eb45d30fb7c5fc13a4466a34378082-;-Martin Leduc-;-31558169+DecimalTurn@users.noreply.github.com-;-1694075014-;-GitHub-;-noreply@github.com-;-1694075014-;-Platform-agnostic-line-endings-6530
+a0a6d59bdcb7e4f4b3f549a7256cd8ff685a1d08-;-Colin Seymour-;-colin@github.com-;-1694074919-;-GitHub-;-noreply@github.com-;-1694074919-;-Harden-heuristics-against-Regexp-TimeoutError-errors-6518
 916bd8f3df802fa98b0ea85539e67bd0b88ef158-;-Colin Seymour-;-colin@github.com-;-1691053389-;-GitHub-;-noreply@github.com-;-1691053389-;-Bump-mocha-dependency-version-6499
 5ffc61a32d9a9ffc198d8c6e83bcdd3cc832f05d-;-Martin Leduc-;-31558169+DecimalTurn@users.noreply.github.com-;-1691000937-;-GitHub-;-noreply@github.com-;-1691000937-;-Address-potential-causes-for-Your-search-did-not-match-any-code-issue-when-clicking-a-language-in-the-stats-bar-6468
 e855ef2b6f90c34074061a2e17acbe853e61b483-;-Colin Seymour-;-colin@github.com-;-1687441763-;-GitHub-;-noreply@github.com-;-1687441763-;-Update-list-of-tree-sitter-grammars-6460
