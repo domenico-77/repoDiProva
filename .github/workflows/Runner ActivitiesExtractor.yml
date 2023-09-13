@@ -45,7 +45,8 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/logs
         mkdir -p developersInactivityAnalysis/Organizations
-        mv output/github developersInactivityAnalysis/Organizations
+        cp -r output/github developersInactivityAnalysis/Organizations
+        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
         if [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
            mv output/Activities_Extraction_github.log developersInactivityAnalysis/logs       
