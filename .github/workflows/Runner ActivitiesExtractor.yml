@@ -2,15 +2,15 @@ name: Runner ActivitiesExtractor
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Truck-Factor"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["Truck-Factor"]
+#    types:
+#      - completed
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+#    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
     - name: Checkout main repo
@@ -53,8 +53,10 @@ jobs:
            echo "Questa è la prima esecuzione."
         fi
 
-    - name: Run Python script CommitExtractor.py
-      run: python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github-linguist/linguist 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
+    - name: Run Python script ActivitiesExtractor.py
+      env:
+        MY_SECRET: ${{ secrets.TOKEN }}
+      run: python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
