@@ -59,12 +59,6 @@ jobs:
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
-        if [ -z "$(find appoggio/Activities_Extraction_github.log)" ]; then
-          rm -r appoggio/github
-          rm appoggio/Activities_Extraction_github.log
-        else
-          echo "La directory 'appoggio/github' non esiste."
-        fi
         mv developersInactivityAnalysis/logs/Activities_Extraction_github.log appoggio
         mv developersInactivityAnalysis/Organizations/github appoggio
         git config --local user.name "domenico-77"
