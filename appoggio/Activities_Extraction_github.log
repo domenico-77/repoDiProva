@@ -1,1 +1,194 @@
 INFO:root:Activity Extraction Started for github.
+INFO:root:Activity Extraction Started for github.
+INFO:root:Project github/media Started Activities Extraction. 1 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 1 of 470 Side Projects
+INFO:root:Project github/albino Started Activities Extraction. 2 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 2 of 470 Side Projects
+INFO:root:Project github/hubahuba Started Activities Extraction. 3 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 3 of 470 Side Projects
+INFO:root:Project github/jquery-hotkeys Started Activities Extraction. 4 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 4 of 470 Side Projects
+INFO:root:Project github/jquery-relatize_date Started Activities Extraction. 5 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 5 of 470 Side Projects
+INFO:root:Project github/request_timer Started Activities Extraction. 6 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 6 of 470 Side Projects
+INFO:root:Project github/will_paginate_with_hotkeys Started Activities Extraction. 7 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 7 of 470 Side Projects
+INFO:root:Project github/gem-builder Started Activities Extraction. 8 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 8 of 470 Side Projects
+INFO:root:Project github/learn.github.com Started Activities Extraction. 9 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 9 of 470 Side Projects
+INFO:root:Project github/safegem Started Activities Extraction. 10 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 10 of 470 Side Projects
+INFO:root:Project github/develop.github.com Started Activities Extraction. 11 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 11 of 470 Side Projects
+INFO:root:Project github/version_sorter Started Activities Extraction. 12 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 12 of 470 Side Projects
+INFO:root:Project github/markup Started Activities Extraction. 13 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 13 of 470 Side Projects
+INFO:root:Project github/upload Started Activities Extraction. 14 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 14 of 470 Side Projects
+INFO:root:Project github/github-services Started Activities Extraction. 15 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 15 of 470 Side Projects
+INFO:root:Project github/gitcasts Started Activities Extraction. 16 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 16 of 470 Side Projects
+INFO:root:Project github/rails Started Activities Extraction. 17 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
+INFO:root:Issues Comments Extraction Complete
+INFO:root:Starting Pull Comments Extraction
+INFO:root:Pulls Comments Extraction Complete
+INFO:root:Starting Issue Events Extraction
+INFO:root:Issues Events Extraction Complete
+INFO:root:Activities Extraction COMPLETE for 17 of 470 Side Projects
+INFO:root:Project github/gitignore Started Activities Extraction. 18 of 470
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Issues/Pulls Extraction Complete
+INFO:root:Starting Issues Comments Extraction
+INFO:root:Starting Issue Comments Extraction
