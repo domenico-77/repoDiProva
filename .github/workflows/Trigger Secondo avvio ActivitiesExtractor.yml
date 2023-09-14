@@ -2,23 +2,25 @@ name: Trigger Secondo avvio ActivitiesExtractor
 
 on:
   workflow_dispatch:
-#  workflow_run:
-#    workflows: ["Secondo avvio ActivitiesExtractor"]
-#    types:
-#      - completed
+  workflow_run:
+    workflows: ["Secondo avvio ActivitiesExtractor"]
+    types:
+      - completed
 
 jobs:
-  trigger_first_workflow:
+  generate_failure:
     runs-on: ubuntu-latest
-
- #   if: ${{ github.event.workflow_run.conclusion == 'failure'}}
+    
+    if: ${{ github.event.workflow_run.conclusion == 'failure'}}
 
     steps:
-      - name: Trigger First Workflow
-        env:
-           MY_SECRET: ${{ secrets.TOKEN }}
-        run: |
-          curl -X POST -u "domenico-77:$MY_SECRET" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/domenico-77/repoDiProva/actions/workflows/6178234368/dispatches \
-          -d '{"ref":"main"}'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Python script (which generates a failure)
+        run: python -c "import sys; sys.exit(1)"
