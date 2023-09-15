@@ -57,9 +57,9 @@ jobs:
     - name: Run Python script ActivitiesExtractor.py
       env:
         MY_SECRET: ${{ secrets.TOKEN }}
-      run: python -c "import sys; sys.exit(1)"
+      run: python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
       timeout-minutes: 340
-      # python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
+      
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
