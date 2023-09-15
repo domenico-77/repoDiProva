@@ -2,7 +2,7 @@ name: Secondo avvio ActivitiesExtractor
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Trigger Secondo avvio ActivitiesExtractor"]
+    workflows: ["Runner ActivitiesExtractor", "Trigger Secondo avvio ActivitiesExtractor"]
     types:
       - completed
 
@@ -10,7 +10,7 @@ jobs:
   job_name:
     runs-on: ubuntu-latest
 
-    if: ${{ github.event.workflow_run.conclusion == 'failure'}}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' && (github.event.workflow_run.name == 'Runner ActivitiesExtractor' || github.event.workflow_run.name == 'Trigger Secondo avvio ActivitiesExtractor') }}
 
 
     steps:
