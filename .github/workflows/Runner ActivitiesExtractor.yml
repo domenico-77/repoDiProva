@@ -52,7 +52,7 @@ jobs:
            mv appoggio/github developersInactivityAnalysis/Organizations
            cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
            
-        else if [ -f "output/Activities_Extraction_github.log" ]; then
+        elif [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Nessuna esecuzione in corso, ma ce ne sono state già altre, recupero i file..."
            cp -r output/github developersInactivityAnalysis/Organizations
            cp output/Activities_Extraction_github.log developersInactivityAnalysis/logs
