@@ -41,16 +41,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di ActivitiesExtractor e recupera i file
+    - name: Controlla se ci sono esecuzioni in corso o se ci sono state altre esecuzioni di ActivitiesExtractor e recupera i file
       run: | 
         mkdir -p developersInactivityAnalysis/logs
         mkdir -p developersInactivityAnalysis/Organizations
-        cp -r output/github developersInactivityAnalysis/Organizations
         cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
+        
         if [ -f "appoggio/Activities_Extraction_github.log" ]; then
            echo "C'è già un esecuzione in corso, recupero i file..."
-           mv output/Activities_Extraction_github.log developersInactivityAnalysis/logs       
-        else
+           mv appoggio/Activities_Extraction_github.log developersInactivityAnalysis/logs
+           mv appoggio/github developersInactivityAnalysis/Organizations
+           
+        else if [ -f "output/Activities_Extraction_github.log" ]; then
+           echo "Nessuna esecuzione in corso, ma ce ne sono state già altre, recupero i file..."
+           cp -r output/github developersInactivityAnalysis/Organizations
+           cp output/Activities_Extraction_github.log developersInactivityAnalysis/logs
+           
+        else 
            echo "Questa è la prima esecuzione."
         fi
 
@@ -63,9 +70,9 @@ jobs:
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
+        rm -r appoggio/github
         if [ -f "appoggio/Activities_Extraction_github.log" ]; then
            rm appoggio/Activities_Extraction_github.log
-           rm -r appoggio/github
            mv developersInactivityAnalysis/logs/Activities_Extraction_github.log appoggio
            mv developersInactivityAnalysis/Organizations/github appoggio        
         else
