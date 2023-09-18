@@ -45,20 +45,22 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/logs
         mkdir -p developersInactivityAnalysis/Organizations
-        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
-        
+          
         if [ -f "appoggio/Activities_Extraction_github.log" ]; then
            echo "C'è già un esecuzione in corso, recupero i file..."
            mv appoggio/Activities_Extraction_github.log developersInactivityAnalysis/logs
            mv appoggio/github developersInactivityAnalysis/Organizations
+           cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
            
         else if [ -f "output/Activities_Extraction_github.log" ]; then
            echo "Nessuna esecuzione in corso, ma ce ne sono state già altre, recupero i file..."
            cp -r output/github developersInactivityAnalysis/Organizations
            cp output/Activities_Extraction_github.log developersInactivityAnalysis/logs
-           
+           cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
         else 
            echo "Questa è la prima esecuzione."
+           cp -r output/github developersInactivityAnalysis/Organizations
+           cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist          
         fi
 
     - name: Run Python script ActivitiesExtractor.py
