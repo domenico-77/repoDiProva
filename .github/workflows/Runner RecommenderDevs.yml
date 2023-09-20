@@ -43,7 +43,7 @@ jobs:
 
 
     - name: Run Python script recommender_devs.py
-      run: python3 developersInactivityAnalysis/Devrecommender/recommender_devs.py ${{ vars.OWNER }}/${{ vars.REPO }} 10 2
+      run: python3 developersInactivityAnalysis/Devrecommender/recommender_devs.py github ${{ vars.REPO }} 10 2
       timeout-minutes: 340
 
 
