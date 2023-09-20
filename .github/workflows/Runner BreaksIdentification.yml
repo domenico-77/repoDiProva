@@ -55,16 +55,16 @@ jobs:
         fi
 
     - name: Run Python script BreaksIdentification.py with tf param
-      run: python3 BreaksIdentification.py tf
+      run: python3 developersInactivityAnalysis/BreaksManager/BreaksIdentification.py tf
         
     - name: Run Python script BreaksIdentification.py with a80 param
-      run: python3 BreaksIdentification.py a80
+      run: python3 developersInactivityAnalysis/BreaksManager/BreaksIdentification.py a80
         
     - name: Run Python script BreaksIdentification.py with a80mod param
-      run: python3 BreaksIdentification.py a80mod
+      run: python3 developersInactivityAnalysis/BreaksManager/BreaksIdentification.py a80mod
         
     - name: Run Python script BreaksIdentification.py with a80api param
-      run: python3 BreaksIdentification.py a80api
+      run: python3 developersInactivityAnalysis/BreaksManager/BreaksIdentification.py a80api
 
         
     - name: Move CSV file to main repository
