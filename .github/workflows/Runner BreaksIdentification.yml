@@ -47,9 +47,9 @@ jobs:
         mkdir -p developersInactivityAnalysis/logs
         mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         
-        if [ -f "output/Breaks_Identification.log" ]; then
+        if [ -f "output/Breaks_Identification_${{ vars.OWNER }}.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/Breaks_Identification.log developersInactivityAnalysis/logs         
+           mv output/Breaks_Identification_${{ vars.OWNER }}.log developersInactivityAnalysis/logs         
         else
            echo "Questa è la prima esecuzione."
         fi
@@ -70,12 +70,12 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         rm -r output/${{ vars.OWNER }}
-        if [ -f "output/Breaks_Identification.log" ]; then
-           rm output/Breaks_Identification.log
-           mv developersInactivityAnalysis/logs/Breaks_Identification.log output
+        if [ -f "output/Breaks_Identification_${{ vars.OWNER }}.log" ]; then
+           rm output/Breaks_Identification_${{ vars.OWNER }}.log
+           mv developersInactivityAnalysis/logs/Breaks_Identification_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
-           mv developersInactivityAnalysis/logs/Breaks_Identification.log output
+           mv developersInactivityAnalysis/logs/Breaks_Identification_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
 
@@ -85,5 +85,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine BreaksIdentification, salvataggio di /${{ vars.OWNER }} e Breaks_Identification.log in output"
+        git commit -m "Fine BreaksIdentification, salvataggio di /${{ vars.OWNER }} e Breaks_Identification_${{ vars.OWNER }}.log in output"
         git push
