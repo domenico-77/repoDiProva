@@ -43,10 +43,10 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di LoginIdentifier e recupera i file
       run: | 
-        mkdir -p developersInactivityAnalysis/A80_Results/linguist
+        mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
         if [ -f "output/login_map.csv" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
+           mv output/login_map.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
         else
             echo "Questa è la prima esecuzione."
         fi
@@ -55,17 +55,17 @@ jobs:
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
-        cp output/linguist/Cstats.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py github/linguist $MY_SECRET
+        cp output/${{ vars.REPO }}/Cstats.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+        python3 developersInactivityAnalysis/CoreSelection/LoginIdentifier.py ${{ vars.OWNER }}/${{ vars.REPO }} $MY_SECRET
 
         
     - name: Move CSV file to main repository
       run: | 
         if [ -f "output/login_map.csv" ]; then
            rm output/login_map.csv
-           mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/login_map.csv output
         else
-           mv developersInactivityAnalysis/A80_Results/linguist/login_map.csv output
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/login_map.csv output
         fi
 
     - name: Commit changes
