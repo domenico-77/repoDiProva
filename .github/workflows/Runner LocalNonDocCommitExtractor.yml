@@ -44,31 +44,31 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di LocalNonDocCommitExtractor e recupera i file
       run: | 
-        if [ -z "$(find output/${{ env.REPO }} -mindepth 1 -maxdepth 1)" ]; then
+        if [ -z "$(find output/${{ vars.REPO }} -mindepth 1 -maxdepth 1)" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mkdir -p developersInactivityAnalysis/A80_Results/${{ env.REPO }}
-           mv output/${{ env.REPO }}/commits.csv developersInactivityAnalysis/A80_Results/${{ env.REPO }}
+           mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+           mv output/${{ vars.REPO }}/commits.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
         else
            echo "Questa è la prima esecuzione."
         fi
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/${{ vars.OWNER }}/${{ vars.REPO }}.git
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
-        if [ -d "appoggio/${{ env.REPO }}" ]; then
-          rm -r appoggio/${{ env.REPO }}
+        if [ -d "appoggio/${{ vars.REPO }}" ]; then
+          rm -r appoggio/${{ vars.REPO }}
         else
-          echo "La directory 'appoggio/${{ env.REPO }}' non esiste."
+          echo "La directory 'appoggio/${{ vars.REPO }}' non esiste."
         fi
-        mv developersInactivityAnalysis/A80_Results/${{ env.REPO }} appoggio
+        mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
-        git add appoggio/${{ env.REPO }}
-        git commit -m "Aggiunto linguist in ${{ env.REPO }}"
+        git add appoggio/${{ vars.REPO }}
+        git commit -m "Aggiunto linguist in ${{ vars.REPO }}"
         git push
 
 
@@ -76,19 +76,19 @@ jobs:
       env:
         REPO: ${{ env.REPO }}
       run: | 
-        if [ -z "$(find output/${{ env.REPO }} -mindepth 1 -maxdepth 1)" ]; then
-           mv developersInactivityAnalysis/A80_Results/${{ env.REPO }} output
+        if [ -z "$(find output/${{ vars.REPO }} -mindepth 1 -maxdepth 1)" ]; then
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         else
-           rm -r output/${{ env.REPO }}
-           mv developersInactivityAnalysis/A80_Results/${{ env.REPO }} output
+           rm -r output/${{ vars.REPO }}
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         fi
-        rm -r appoggio/${{ env.REPO }}
+        rm -r appoggio/${{ vars.REPO }}
 
     - name: Commit changes
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
-        git add output/${{ env.REPO }}
+        git add output/${{ vars.REPO }}
         git commit -m "Terminato LocalNonDocCommitExtractor, aggiunto linguist in output"
         git push
