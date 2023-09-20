@@ -46,22 +46,22 @@ jobs:
       run: |
          mkdir -p developersInactivityAnalysis/logs
          mkdir -p developersInactivityAnalysis/Organizations
-         mv appoggio/Activities_Extraction_github.log developersInactivityAnalysis/logs
-         mv appoggio/github developersInactivityAnalysis/Organizations
+         mv appoggio/Activities_Extraction_${{ vars.OWNER }}.log developersInactivityAnalysis/logs
+         mv appoggio/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
       
     - name: Run Python script ActivitiesExtractor.py
       env:
         MY_SECRET: ${{ secrets.TOKEN }}
       run: |
-        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/github/linguist
-        python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py github/linguist $MY_SECRET
+        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/${{ vars.REPO }}
+        python3 developersInactivityAnalysis/Extractors/ActivitiesExtractor.py ${{ vars.OWNER }}/${{ vars.REPO }} $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
-        mv developersInactivityAnalysis/logs/Activities_Extraction_github.log appoggio
-        mv developersInactivityAnalysis/Organizations/github appoggio
+        mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log appoggio
+        mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
@@ -72,17 +72,16 @@ jobs:
 
     - name: Move CSV file to main repository
       run: | 
-        if [ -z "$(find output/Activities_Extraction_github.log)" ]; then
-           mv developersInactivityAnalysis/logs/Activities_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+        if [ -z "$(find output/Activities_Extraction_${{ vars.OWNER }}.log)" ]; then
+           mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
+           mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
-           rm -r output/github
-           rm output/Activities_Extraction_github.log
-           mv developersInactivityAnalysis/logs/Activities_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+           rm -r output/${{ vars.OWNER }}
+           rm output/Activities_Extraction_${{ vars.OWNER }}.log
+           mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
+           mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
-        rm appoggio/Activities_Extraction_github.log
-        rm -r appoggio/github
+
 
     - name: Commit changes
       run: |        
@@ -90,5 +89,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine estrazione, salvataggio di Activities_Extraction_github.log e /github in output"
+        git commit -m "Fine estrazione, salvataggio di Activities_Extraction_${{ vars.OWNER }}.log e /${{ vars.OWNER }} in output"
         git push
