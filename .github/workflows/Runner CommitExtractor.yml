@@ -51,6 +51,7 @@ jobs:
            mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         else
            echo "Questa è la prima esecuzione."
+           cp -r output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations       
         fi
 
     - name: Run Python script CommitExtractor.py
