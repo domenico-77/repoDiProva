@@ -43,10 +43,10 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di UnmaskAliases e recupera i file
       run: | 
-        mkdir -p developersInactivityAnalysis/A80_Results/linguist
+        mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
         if [ -f "output/unmasking_results.csv" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/linguist
+           mv output/unmasking_results.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
         else
             echo "Questa è la prima esecuzione."
         fi
@@ -55,17 +55,17 @@ jobs:
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
-        cp output/login_map.csv developersInactivityAnalysis/A80_Results/linguist
-        python3 developersInactivityAnalysis/CoreSelection/UnmaskAliases.py github/linguist $MY_SECRET
+        cp output/login_map.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+        python3 developersInactivityAnalysis/CoreSelection/UnmaskAliases.py ${{ vars.OWNER }}/${{ vars.REPO }} $MY_SECRET
 
         
     - name: Move CSV file to main repository
       run: | 
         if [ -f "output/unmasking_results.csv" ]; then
            rm output/unmasking_results.csv
-           mv developersInactivityAnalysis/A80_Results/linguist/unmasking_results.csv output          
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/unmasking_results.csv output          
         else
-           mv developersInactivityAnalysis/A80_Results/linguist/unmasking_results.csv output
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/unmasking_results.csv output
         fi
 
     - name: Commit changes
