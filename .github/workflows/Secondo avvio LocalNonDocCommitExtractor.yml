@@ -43,23 +43,23 @@ jobs:
 
     - name: sposta da appoggio ad developersInactivityAnalysis/A80_Results/linguist
       run: |
-         mkdir -p developersInactivityAnalysis/A80_Results/linguist/
-         mv appoggio/linguist/commits.csv developersInactivityAnalysis/A80_Results/linguist/
+         mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/
+         mv appoggio/${{ vars.REPO }}/commits.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/
       
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/${{ vars.OWNER }}/${{ vars.REPO }}.git
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
-        if [ -d "appoggio/linguist" ]; then
-          rm -r appoggio/linguist
+        if [ -d "appoggio/${{ vars.REPO }}" ]; then
+          rm -r appoggio/${{ vars.REPO }}
         else
-          echo "La directory 'linguist' in 'appoggio' non esiste."
+          echo "La directory '${{ vars.REPO }}' in 'appoggio' non esiste."
         fi
         mkdir -p appoggio
-        mv developersInactivityAnalysis/A80_Results/linguist appoggio
+        mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git add appoggio
@@ -69,11 +69,11 @@ jobs:
 
     - name: Move CSV file to main repository
       run: | 
-        if [ -z "$(find output/linguist -mindepth 1 -maxdepth 1)" ]; then
-           mv developersInactivityAnalysis/A80_Results/linguist output
+        if [ -z "$(find output/${{ vars.REPO }} -mindepth 1 -maxdepth 1)" ]; then
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         else
-           rm -r output/linguist
-           mv developersInactivityAnalysis/A80_Results/linguist output
+           rm -r output/${{ vars.REPO }}
+           mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         fi
 
     - name: Commit changes
