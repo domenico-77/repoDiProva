@@ -47,9 +47,9 @@ jobs:
         mkdir -p developersInactivityAnalysis/logs
         mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         
-        if [ -f "output/Breaks_Labeling.log" ]; then
+        if [ -f "output/Breaks_Labeling_${{ vars.OWNER }}.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
-           mv output/Breaks_Labeling.log developersInactivityAnalysis/logs         
+           mv output/Breaks_Labeling_${{ vars.OWNER }}.log developersInactivityAnalysis/logs         
         else
            echo "Questa è la prima esecuzione."
         fi
@@ -70,12 +70,12 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         rm -r output/${{ vars.OWNER }}
-        if [ -f "output/Breaks_Labeling.log" ]; then
-           rm output/Breaks_Labeling.log
-           mv developersInactivityAnalysis/logs/Breaks_Labeling.log output
+        if [ -f "output/Breaks_Labeling_${{ vars.OWNER }}.log" ]; then
+           rm output/Breaks_Labeling_${{ vars.OWNER }}.log
+           mv developersInactivityAnalysis/logs/Breaks_Labeling_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
-           mv developersInactivityAnalysis/logs/Breaks_Labeling.log output
+           mv developersInactivityAnalysis/logs/Breaks_Labeling_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
 
@@ -85,5 +85,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine BreaksLabeling, salvataggio di /${{ vars.OWNER }} e Breaks_Labeling.log in output"
+        git commit -m "Fine BreaksLabeling, salvataggio di /${{ vars.OWNER }} e Breaks_Labeling_${{ vars.OWNER }}.log in output"
         git push
