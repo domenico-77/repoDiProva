@@ -11,9 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-        OWNER: ${{ env.OWNER }}
-        REPO: ${{ env.REPO }}
+    
         
     steps:
     - name: Checkout main repo
@@ -45,6 +43,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Controlla se ci sono state altre esecuzioni di LocalNonDocCommitExtractor e recupera i file
+      env:
+        REPO: ${{ env.REPO }}
       run: | 
         if [ -z "$(find output/$REPO -mindepth 1 -maxdepth 1)" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
@@ -55,10 +55,15 @@ jobs:
         fi
 
     - name: Run Python script
+      env:
+        OWNER: ${{ env.OWNER }}
+        REPO: ${{ env.REPO }}
       run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/$OWNER/$REPO.git
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
+      env:
+        REPO: ${{ env.REPO }}
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
         if [ -d "appoggio/$REPO" ]; then
@@ -75,6 +80,8 @@ jobs:
 
 
     - name: Move CSV file to main repository
+      env:
+        REPO: ${{ env.REPO }}
       run: | 
         if [ -z "$(find output/$REPO -mindepth 1 -maxdepth 1)" ]; then
            mv developersInactivityAnalysis/A80_Results/$REPO output
@@ -85,6 +92,8 @@ jobs:
         rm -r appoggio/$REPO
 
     - name: Commit changes
+      env:
+        REPO: ${{ env.REPO }}
       run: |        
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
