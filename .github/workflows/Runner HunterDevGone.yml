@@ -52,10 +52,11 @@ jobs:
         
 
       #rm -r output/${{ vars.OWNER }} da aggiungere qua sotto
+      #mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
     - name: Move CSV file to main repository
       run: | 
         
-        mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
+        mv developersInactivityAnalysis/Organizations/github output
        
 
     - name: Commit changes
