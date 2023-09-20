@@ -41,12 +41,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di BreaksLabeling e recupera i file
-      run: | 
-        mkdir -p developersInactivityAnalysis/Organizations
-        mkdir -p developersInactivityAnalysis/logs
-        cp output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
-
 
     - name: Run Python script MissingStuffCollector.py
       run: |
