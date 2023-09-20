@@ -50,7 +50,7 @@ jobs:
         fi
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/github-linguist/linguist.git
+      run: python3 developersInactivityAnalysis/CoreSelection/LocalNonDocCommitExtractor.py https://github.com/$OWNER_REPO.git
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
