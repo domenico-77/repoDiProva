@@ -1,16 +1,16 @@
 name: Secondo avvio CommitExtractor
 on:
   workflow_dispatch:
-#  workflow_run:
-#    workflows: ["Runner CommitExtractor", "Trigger Secondo avvio CommitExtractor"]
-#    types:
-#      - completed
+  workflow_run:
+    workflows: ["Runner CommitExtractor"]
+    types:
+      - completed
 
 jobs:
   job_name:
     runs-on: ubuntu-latest
 
-#    if: ${{ github.event.workflow_run.conclusion == 'failure' && (github.event.workflow_run.name == 'Runner CommitExtractor' || github.event.workflow_run.name == 'Trigger Secondo avvio CommitExtractor') }}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
 
     steps:
     - name: Checkout main repo
