@@ -45,43 +45,43 @@ jobs:
       run: |
          mkdir -p developersInactivityAnalysis/logs
          mkdir -p developersInactivityAnalysis/Organizations
-         mv appoggio/Commit_Extraction_github.log developersInactivityAnalysis/logs
-         mv appoggio/github developersInactivityAnalysis/Organizations
+         mv appoggio/Commit_Extraction_${{ vars.OWNER }}.log developersInactivityAnalysis/logs
+         mv appoggio/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
       
     - name: Run Python script
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
-      run: python3 developersInactivityAnalysis/Extractors/CommitExtractor.py github-linguist/linguist $MY_SECRET
+      run: python3 developersInactivityAnalysis/Extractors/CommitExtractor.py ${{ vars.OWNER }}/${{ vars.REPO }} $MY_SECRET
       timeout-minutes: 340
       
     - name: Salva i dati temporanei nella cartella di appoggio
       if: ${{ failure() }} #si avvia solo se quello di prima è stato interrotto
       run: |  
         if [ -z "$(find appoggio/github -mindepth 1 -maxdepth 1)" ]; then
-          rm -r appoggio/github
-          rm appoggio/Commit_Extraction_github.log
+          rm -r appoggio/${{ vars.OWNER }}
+          rm appoggio/Commit_Extraction_${{ vars.OWNER }}.log
         else
-          echo "La directory 'appoggio/github' non esiste."
+          echo "La directory 'appoggio/${{ vars.OWNER }}' non esiste."
         fi
-        mv developersInactivityAnalysis/logs/Commit_Extraction_github.log appoggio
-        mv developersInactivityAnalysis/Organizations/github appoggio
+        mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log appoggio
+        mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git add appoggio
-        git commit -m "Aggiornati appoggio/github e appoggio/Commit_Extraction_github.log"
+        git commit -m "Aggiornati appoggio/${{ vars.OWNER }} e appoggio/Commit_Extraction_${{ vars.OWNER }}.log"
         git push
 
 
     - name: Move CSV file to main repository
       run: | 
-        if [ -z "$(find output/github -mindepth 1 -maxdepth 1)" ]; then
-           mv developersInactivityAnalysis/logs/Commit_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+        if [ -z "$(find output/${{ vars.OWNER }} -mindepth 1 -maxdepth 1)" ]; then
+           mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log output
+           mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
-           rm -r output/github
-           rm output/Commit_Extraction_github.log
-           mv developersInactivityAnalysis/logs/Commit_Extraction_github.log output
-           mv developersInactivityAnalysis/Organizations/github output
+           rm -r output/${{ vars.OWNER }}
+           rm output/Commit_Extraction_${{ vars.OWNER }}.log
+           mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log output
+           mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
 
 
@@ -91,5 +91,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine estrazione, salvataggio di Commit_Extraction_github.log e /github in output"
+        git commit -m "Fine estrazione, salvataggio di Commit_Extraction_${{ vars.OWNER }}.log e /${{ vars.OWNER }} in output"
         git push
