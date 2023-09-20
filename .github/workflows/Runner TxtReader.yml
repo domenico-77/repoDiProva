@@ -43,7 +43,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Python script
-      run: python3 developersInactivityAnalysis/TruckFactor/TxtReader.py linguist
+      run: python3 developersInactivityAnalysis/TruckFactor/TxtReader.py ${{ vars.REPO }}
 
 
     - name: Commit changes
