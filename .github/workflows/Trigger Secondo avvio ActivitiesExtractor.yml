@@ -24,7 +24,7 @@ jobs:
 
 
       - name: Run Python script 
-        run: python3 timer.py
+        run: python3 repoDiProva/timer.py
 
 
       - name: Sleep for 10 minutes and generates a failure
