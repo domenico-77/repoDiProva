@@ -22,10 +22,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Sleep for 10 minutes
-        run: sleep 600
 
-      - name: Run Python script (which generates a failure)
+      - name: Run Python script 
+        run: python3 timer.py
+
+
+      - name: Sleep for 10 minutes and generates a failure
         run: |
-          python3 timer.py
+          sleep 600
           python -c "import sys; sys.exit(1)"
