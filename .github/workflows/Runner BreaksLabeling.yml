@@ -45,7 +45,7 @@ jobs:
       run: | 
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/logs
-        mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
+        cp output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         
         if [ -f "output/Breaks_Labeling_${{ vars.OWNER }}.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
