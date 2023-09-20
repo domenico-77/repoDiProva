@@ -42,7 +42,7 @@ jobs:
         pip install -r requirements.txt
 
 
-    - name: Run Python script ActivitiesExtractor.py
+    - name: Run Python script CreateDatasetRecommeder.py
       env:
         MY_SECRET: ${{ secrets.TOKEN }}
       run: python3 developersInactivityAnalysis/Devrecommender/Create_dataset_recommeder.py ${{ vars.OWNER }}/${{ vars.REPO }} $MY_SECRET
