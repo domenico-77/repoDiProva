@@ -1,0 +1,60 @@
+INFO:root:Commit Extraction Started for github-linguist.
+INFO:root:Commit Extraction for linguist
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for linguist
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for linguist
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for language-babel
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for language-babel
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for language-babel
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for sublime-sourcepawn
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for sublime-sourcepawn
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for sublime-sourcepawn
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for awk-sublime
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for awk-sublime
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for awk-sublime
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for NSIS
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for NSIS
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for NSIS
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for babel-sublime
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:Start Writing Commit History Table for babel-sublime
+INFO:root:Commit History Table Written
+INFO:root:Starting Inactivity Computation for babel-sublime
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction for razor-plus
+INFO:root:Initializing Extraction
+INFO:root:Starting New Extraction
+INFO:root:Commit Extraction Complete
+INFO:root:No Commits for razor-plus
+INFO:root:Commit Extraction COMPLETE for 6 of 6 Side Projects
+INFO:root:Merging the Commits in the WHOLE github-linguist Organization
+INFO:root:All the Organization commits have been merged with 
+INFO:root:Commit History Table Written
+INFO:root:Inactivity Computation Done
+INFO:root:Commit Extraction SUCCESSFULLY COMPLETED
