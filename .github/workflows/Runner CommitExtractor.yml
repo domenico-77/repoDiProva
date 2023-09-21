@@ -87,6 +87,7 @@ jobs:
         else
            rm -r output/${{ vars.OWNER }}
            rm output/Commit_Extraction_${{ vars.OWNER }}.log
+           cp developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/pauses_dates_list.csv output
            mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
