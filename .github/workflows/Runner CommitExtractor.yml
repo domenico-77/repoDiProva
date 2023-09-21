@@ -81,16 +81,17 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         if [ -z "$(find output/${{ vars.OWNER }} -mindepth 1 -maxdepth 1)" ]; then
-           cp developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/pauses_dates_list.csv output
+           
            mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
            rm -r output/${{ vars.OWNER }}
            rm output/Commit_Extraction_${{ vars.OWNER }}.log
-           cp developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/pauses_dates_list.csv output
+           
            mv developersInactivityAnalysis/logs/Commit_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         fi
+    #cp developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/pauses_dates_list.csv output da mettere negli spazi vuoti
 
     - name: Commit changes
       run: |        
