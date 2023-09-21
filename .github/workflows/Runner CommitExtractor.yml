@@ -72,6 +72,7 @@ jobs:
         mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} appoggio
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
+        git pull
         git add appoggio
         git commit -m "Aggiunti appoggio/${{ vars.OWER }} e appoggio/Commit_Extraction_${{ vars.OWNER }}.log"
         git push
