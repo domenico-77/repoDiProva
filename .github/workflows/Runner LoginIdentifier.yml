@@ -51,7 +51,7 @@ jobs:
             echo "Questa è la prima esecuzione."
         fi
 
-    - name: Run Python script CommitExtractor.py
+    - name: Run Python script LoginIdentifier.py
       env:
          MY_SECRET: ${{ secrets.TOKEN }}
       run: |
