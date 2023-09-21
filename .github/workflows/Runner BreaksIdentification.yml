@@ -46,6 +46,7 @@ jobs:
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/logs
         mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
+        mkdir -p developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/Dev_Breaks
         
         if [ -f "output/Breaks_Identification_${{ vars.OWNER }}.log" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
