@@ -41,17 +41,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Controlla se ci sono state altre esecuzioni di BreaksIdentification e recupera i file
+    - name: Set file and directory for run
       run: | 
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/logs
+        
         mkdir -p developersInactivityAnalysis/TF_Results/${{ vars.REPO }}
         mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+        mkdir -p developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}
+        mkdir -p developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}
             
         mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/Dev_Breaks
+        
         cp output/TF_devs.csv developersInactivityAnalysis/TF_Results/${{ vars.REPO }}
         cp output/A80_devs.csv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+        cp output/A80mod_devs.csv developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}
+        cp output/A80api_devs.csv developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}
         
         
         if [ -f "output/Breaks_Identification_${{ vars.OWNER }}.log" ]; then
