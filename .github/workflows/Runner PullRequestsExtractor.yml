@@ -75,14 +75,15 @@ jobs:
 
     - name: Move CSV file to main repository
       run: |
-           rm -r output/${{ vars.OWNER }}
+         rm -r output/${{ vars.OWNER }}
+         if [ -f "output/Activities_Extraction_${{ vars.OWNER }}.log" ]; then
            rm output/Activities_Extraction_${{ vars.OWNER }}.log
            mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output       
-    #    else
-     #      mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
-     #      mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
-     #   fi
+         else
+           mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
+           mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
+         fi
 
     - name: Commit changes
       run: |        
