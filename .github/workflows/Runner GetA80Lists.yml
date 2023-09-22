@@ -44,6 +44,8 @@ jobs:
     - name: Controlla se ci sono state altre esecuzioni di GetA80Lists e recupera i file
       run: | 
         mkdir -p developersInactivityAnalysis/A80_Results/${{ vars.REPO }}
+        mkdir -p developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}
+        mkdir -p developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}
         mkdir -p developersInactivityAnalysis/Organizations
         if [ -f "output/A80_devs.csv" ]; then
            echo "Ci sono state altre esecuzioni, recupero i file..."
@@ -65,9 +67,15 @@ jobs:
       run: | 
         if [ -f "output/A80_devs.csv" ]; then
            rm output/A80_devs.csv
+
            mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/A80_devs.csv output
+           mv developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}/A80mod_devs.csv output
+           mv developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}/A80api_devs.csv output
         else
            mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/A80_devs.csv output
+           mv developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}/A80mod_devs.csv output
+           mv developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}/A80api_devs.csv output
+        else
         fi
 
     - name: Commit changes
