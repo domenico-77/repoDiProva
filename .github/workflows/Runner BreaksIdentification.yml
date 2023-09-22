@@ -51,7 +51,7 @@ jobs:
         mkdir -p developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}
         mkdir -p developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}
             
-        mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
+        cp output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/Dev_Breaks
         
         cp output/TF_devs.csv developersInactivityAnalysis/TF_Results/${{ vars.REPO }}
