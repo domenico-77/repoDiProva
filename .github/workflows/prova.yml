@@ -30,3 +30,14 @@ jobs:
         run: |
           sleep 600
           python -c "import sys; sys.exit(1)"
+
+      - name: Commit changes
+        run: |        
+          git config --local user.name "domenico-77"
+          git config --local user.email "d.vicenti1@studenti.uniba.it"
+          git pull
+          git add timer.txt
+          git commit -m "timer.txt updated"
+          git push
+
+
