@@ -26,11 +26,6 @@ jobs:
         run: python3 timer.py
 
 
-      - name: Sleep for 10 minutes and generates a failure
-        run: |
-          sleep 600
-          python -c "import sys; sys.exit(1)"
-
       - name: Commit changes
         run: |        
           git config --local user.name "domenico-77"
@@ -39,5 +34,10 @@ jobs:
           git add timer.txt
           git commit -m "timer.txt updated"
           git push
+
+      - name: Sleep for 10 minutes and generates a failure
+        run: |
+          sleep 600
+          python -c "import sys; sys.exit(1)"
 
 
