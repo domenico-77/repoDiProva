@@ -75,7 +75,6 @@ jobs:
            mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }}/A80_devs.csv output
            mv developersInactivityAnalysis/A80MOD_Results/${{ vars.REPO }}/A80mod_devs.csv output
            mv developersInactivityAnalysis/A80API_Results/${{ vars.REPO }}/A80api_devs.csv output
-        else
         fi
 
     - name: Commit changes
