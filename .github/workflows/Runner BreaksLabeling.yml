@@ -3,7 +3,7 @@ name: Runner BreaksLabeling
 on:
   workflow_dispatch:
 #  workflow_run:
-#    workflows: ["Runner BreaksIdentification"]
+#    workflows: ["Runner PullRequestsExtractor"]
 #    types:
 #      - completed
 
