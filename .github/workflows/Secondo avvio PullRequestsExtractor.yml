@@ -1,4 +1,4 @@
-name: Secondo avvio ActivitiesExtractor
+name: Secondo avvio PullRequestsExtractor
 on:
   workflow_dispatch:
   workflow_run:
