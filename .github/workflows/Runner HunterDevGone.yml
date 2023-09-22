@@ -65,5 +65,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine MissingStuffCollector, salvataggio di /${{ vars.OWNER }} in output"
+        git commit -m "Fine HunterDevGone, salvataggio di /atom in output"
         git push
