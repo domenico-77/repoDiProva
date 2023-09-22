@@ -2,15 +2,15 @@ name: Runner BreaksIdentification
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Runner ActivitiesExtractor", "Secondo avvio ActivitiesExtractor"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["Runner ActivitiesExtractor", "Secondo avvio ActivitiesExtractor"]
+#    types:
+#      - completed
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.name == 'Runner ActivitiesExtractor' || github.event.workflow_run.name == 'Secondo avvio ActivitiesExtractor') }}
+ #   if: ${{ github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.name == 'Runner ActivitiesExtractor' || github.event.workflow_run.name == 'Secondo avvio ActivitiesExtractor') }}
 
     steps:
     - name: Checkout main repo
