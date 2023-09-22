@@ -43,10 +43,11 @@ jobs:
 
     - name: Controlla se ci sono state altre esecuzioni di BreaksIdentification e recupera i file
       run: | 
-        mkdir -p developersInactivityAnalysis/Organizations/TF_Results/${{ vars.REPO }}
+        mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/logs
+        mkdir -p developersInactivityAnalysis/TF_Results/${{ vars.REPO }}
         mv output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
-        cp output/TF_devs.csv developersInactivityAnalysis/Organizations/TF_Results/${{ vars.REPO }}
+        cp output/TF_devs.csv developersInactivityAnalysis/TF_Results/${{ vars.REPO }}
         mkdir -p developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/Dev_Breaks
         
         if [ -f "output/Breaks_Identification_${{ vars.OWNER }}.log" ]; then
