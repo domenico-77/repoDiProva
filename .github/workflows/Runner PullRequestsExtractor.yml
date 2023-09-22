@@ -3,7 +3,7 @@ name: Runner PullRequestsExtractor
 on:
   workflow_dispatch:
 #  workflow_run:
-#    workflows: ["Runner BreaksLabeling"]
+#    workflows: ["Runner BreaksIdentification"]
 #    types:
 #      - completed
 
