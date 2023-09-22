@@ -54,7 +54,7 @@ jobs:
         
     - name: Move CSV file to main repository
       run: | 
-           rm output/${{ vars.OWNER }}
+           rm -r output/${{ vars.OWNER }}
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
 
 
