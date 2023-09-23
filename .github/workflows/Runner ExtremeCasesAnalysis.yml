@@ -47,6 +47,7 @@ jobs:
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/Organizations/A80API
         cp -r output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
+        
         python3 developersInactivityAnalysis/Statistics_Calculators/ExtremeCasesAnalysis.py
 
         
