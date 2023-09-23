@@ -83,7 +83,9 @@ jobs:
            rm -r output/${{ vars.REPO }}
            mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         fi
-        rm -r appoggio/${{ vars.REPO }}
+        if [ -z "$(find appoggio/${{ vars.REPO }} -mindepth 1 -maxdepth 1)" ]; then
+           rm -r appoggio/${{ vars.REPO }}
+        fi
 
     - name: Commit changes
       run: |        
