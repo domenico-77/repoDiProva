@@ -3,7 +3,7 @@ name: Runner ExtremeCasesAnalysis
 on:
   workflow_dispatch:
 #  workflow_run:
-#    workflows: ["Runner CodingTableBuilder"]
+#    workflows: ["Runner BreaksLabeling"]
 #    types:
 #      - completed
 
