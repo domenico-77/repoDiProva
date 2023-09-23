@@ -84,8 +84,10 @@ jobs:
            mv developersInactivityAnalysis/A80_Results/${{ vars.REPO }} output
         fi
         if [ -z "$(find appoggio/${{ vars.REPO }} -mindepth 1 -maxdepth 1)" ]; then
-           rm -r appoggio/${{ vars.REPO }}
-        fi
+           echo "oppoggio empty"
+        else
+            rm -r appoggio/${{ vars.REPO }}
+        fi    
 
     - name: Commit changes
       run: |        
