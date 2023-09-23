@@ -41,15 +41,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-
-    - name: Run Python script ExtremeCasesAnalysis.py
+        
+    - name: Setup directory
       run: |
         mkdir -p developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/Organizations/A80API
         cp -r output/${{ vars.OWNER }} developersInactivityAnalysis/Organizations
         mkdir -p developersInactivityAnalysis/Organizations${{ vars.OWNER }}/Dev_Breaks
         cp -r output/${{ vars.OWNER }}/Dev_Breaks/A80API developersInactivityAnalysis/Organizations${{ vars.OWNER }}/Dev_Breaks
-        python3 developersInactivityAnalysis/Statistics_Calculators/ExtremeCasesAnalysis.py
+        
+        if [ -e "developersInactivityAnalysis/Organizations${{ vars.OWNER }}/Dev_Breaks/A80API" ]; then
+            echo "Il percorso esiste."
+          else
+            echo "Il percorso non esiste."
+          fi
+
+    - name: Run Python script ExtremeCasesAnalysis.py
+      run: python3 developersInactivityAnalysis/Statistics_Calculators/ExtremeCasesAnalysis.py
 
         
     - name: Move CSV file to main repository
