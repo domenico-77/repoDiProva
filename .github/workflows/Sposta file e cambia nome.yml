@@ -14,8 +14,8 @@ jobs:
     - name: Sposta e rinomina il file
       run: |
         # Sostituisci questi valori con i tuoi percorsi e nomi di file desiderati
-        ORIG_PATH=repoDiProva/output/${{ vars.OWNER }}
-        DEST_PATH=repoDiProva/output
+        ORIG_PATH=output/${{ vars.OWNER }}
+        DEST_PATH=output
         OLD_FILE_NAME=coding_pauses_dates.csv
         NEW_FILE_NAME=pauses_dates_list.csv
 
