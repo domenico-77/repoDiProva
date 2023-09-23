@@ -22,10 +22,11 @@ jobs:
         mv "$ORIG_PATH/$OLD_FILE_NAME" "$DEST_PATH/$NEW_FILE_NAME"
       working-directory: ${{ github.workspace }}
 
-    - name: Esegui il commit e il push delle modifiche
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git add "$DEST_PATH/$NEW_FILE_NAME"
-        git commit -m "Spostato e rinominato il file"
+    - name: Commit changes
+      run: |        
+        git config --local user.name "domenico-77"
+        git config --local user.email "d.vicenti1@studenti.uniba.it"
+        git pull
+        git add output
+        git commit -m "Fine"
         git push
