@@ -45,7 +45,7 @@ jobs:
     - name: Run Python script CreateDatasetRecommeder.py
       env:
         MY_SECRET: ${{ secrets.TOKEN }}
-      run: python3 developersInactivityAnalysis/Devrecommender/Create_dataset_recommeder.py github ${{ vars.REPO }} $MY_SECRET
+      run: python3 developersInactivityAnalysis/Devrecommender/Create_dataset_recommeder.py ${{ vars.OWNER }} ${{ vars.REPO }} $MY_SECRET
       timeout-minutes: 340
 
 
