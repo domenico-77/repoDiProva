@@ -1,10 +1,10 @@
 name: Secondo avvio PullRequestsExtractor
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Runner PullRequestsExtractor"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["Runner PullRequestsExtractor"]
+#    types:
+#      - completed
 
 jobs:
   job_name:
