@@ -13,10 +13,13 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Creazione della cartella con la data corrente
-      run: mkdir $(date +'%Y-%m-%d')
+      run: mkdir -p pastExecutions/$(date +'%Y-%m-%d')
       
     - name: Sposta i file dall'output alla cartella con la data corrente
       run: mv output/* $(date +'%Y-%m-%d')
+
+    - name: Svuota la cartella "output"
+      run: rm -rf output/*
       
     - name: Commit changes
       run: |        
