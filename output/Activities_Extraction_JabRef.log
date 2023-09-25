@@ -1,0 +1,286 @@
+INFO:root:Activity Extraction Started for JabRef.
+INFO:root:Project JabRef/CrossRefX Started Activities Extraction. 1 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 1 of 44 Side Projects
+INFO:root:Project JabRef/popeye Started Activities Extraction. 2 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 2 of 44 Side Projects
+INFO:root:Project JabRef/jpfcodegen Started Activities Extraction. 3 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 3 of 44 Side Projects
+INFO:root:Project JabRef/net.sf.jabref.export.xml Started Activities Extraction. 4 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 4 of 44 Side Projects
+INFO:root:Project JabRef/JabRef-Browser-Extension Started Activities Extraction. 5 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 5 of 44 Side Projects
+INFO:root:Project JabRef/abbrv.jabref.org Started Activities Extraction. 6 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 6 of 44 Side Projects
+INFO:root:Project JabRef/jabref Started Activities Extraction. 7 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 7 of 44 Side Projects
+INFO:root:Project JabRef/htdocs Started Activities Extraction. 8 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 8 of 44 Side Projects
+INFO:root:Project JabRef/SoJa Started Activities Extraction. 9 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 9 of 44 Side Projects
+INFO:root:Project JabRef/com.jgoodies.uif_lite Started Activities Extraction. 10 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 10 of 44 Side Projects
+INFO:root:Project JabRef/manuals.jabref.org Started Activities Extraction. 11 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 11 of 44 Side Projects
+INFO:root:Project JabRef/JabRef4Word Started Activities Extraction. 12 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 12 of 44 Side Projects
+INFO:root:Project JabRef/cloudref Started Activities Extraction. 13 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 13 of 44 Side Projects
+INFO:root:Project JabRef/JabCon Started Activities Extraction. 14 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 14 of 44 Side Projects
+INFO:root:Project JabRef/custom-imports Started Activities Extraction. 15 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 15 of 44 Side Projects
+INFO:root:Project JabRef/www.jabref.org Started Activities Extraction. 16 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 16 of 44 Side Projects
+INFO:root:Project JabRef/user-documentation Started Activities Extraction. 17 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 17 of 44 Side Projects
+INFO:root:Project JabRef/blog.jabref.org Started Activities Extraction. 18 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 18 of 44 Side Projects
+INFO:root:Project JabRef/faq.jabref.org Started Activities Extraction. 19 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 19 of 44 Side Projects
+INFO:root:Project JabRef/issues.jabref.org Started Activities Extraction. 20 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 20 of 44 Side Projects
+INFO:root:Project JabRef/code.jabref.org Started Activities Extraction. 21 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 21 of 44 Side Projects
+INFO:root:Project JabRef/donations.jabref.org Started Activities Extraction. 22 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 22 of 44 Side Projects
+INFO:root:Project JabRef/downloads.jabref.org Started Activities Extraction. 23 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 23 of 44 Side Projects
+INFO:root:Project JabRef/jstyles.jabref.org Started Activities Extraction. 24 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 24 of 44 Side Projects
+INFO:root:Project JabRef/layouts.jabref.org Started Activities Extraction. 25 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 25 of 44 Side Projects
+INFO:root:Project JabRef/EndNode-JabRef-filters Started Activities Extraction. 26 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 26 of 44 Side Projects
+INFO:root:Project JabRef/scimappr Started Activities Extraction. 27 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 27 of 44 Side Projects
+INFO:root:Project JabRef/org.jabref.gui.customjfx.support Started Activities Extraction. 28 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 28 of 44 Side Projects
+INFO:root:Project JabRef/contribute.jabref.org Started Activities Extraction. 29 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 29 of 44 Side Projects
+INFO:root:Project JabRef/afterburner.fx Started Activities Extraction. 30 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 30 of 44 Side Projects
+INFO:root:Project JabRef/docker-javafx Started Activities Extraction. 31 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 31 of 44 Side Projects
+INFO:root:Project JabRef/2018-UserStudy Started Activities Extraction. 32 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 32 of 44 Side Projects
+INFO:root:Project JabRef/hacktoberfest-contributor-overview-generator Started Activities Extraction. 33 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 33 of 44 Side Projects
+INFO:root:Project JabRef/translate.jabref.org Started Activities Extraction. 34 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 34 of 44 Side Projects
+INFO:root:Project JabRef/themes.jabref.org Started Activities Extraction. 35 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 35 of 44 Side Projects
+INFO:root:Project JabRef/JabRefOnline Started Activities Extraction. 36 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Activity Extraction Started for JabRef.
+INFO:root:Project JabRef/CrossRefX Started Activities Extraction. 1 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 1 of 44 Side Projects
+INFO:root:Project JabRef/popeye Started Activities Extraction. 2 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 2 of 44 Side Projects
+INFO:root:Project JabRef/jpfcodegen Started Activities Extraction. 3 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 3 of 44 Side Projects
+INFO:root:Project JabRef/net.sf.jabref.export.xml Started Activities Extraction. 4 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 4 of 44 Side Projects
+INFO:root:Project JabRef/JabRef-Browser-Extension Started Activities Extraction. 5 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 5 of 44 Side Projects
+INFO:root:Project JabRef/abbrv.jabref.org Started Activities Extraction. 6 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 6 of 44 Side Projects
+INFO:root:Project JabRef/jabref Started Activities Extraction. 7 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 7 of 44 Side Projects
+INFO:root:Project JabRef/htdocs Started Activities Extraction. 8 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 8 of 44 Side Projects
+INFO:root:Project JabRef/SoJa Started Activities Extraction. 9 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 9 of 44 Side Projects
+INFO:root:Project JabRef/com.jgoodies.uif_lite Started Activities Extraction. 10 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 10 of 44 Side Projects
+INFO:root:Project JabRef/manuals.jabref.org Started Activities Extraction. 11 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 11 of 44 Side Projects
+INFO:root:Project JabRef/JabRef4Word Started Activities Extraction. 12 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 12 of 44 Side Projects
+INFO:root:Project JabRef/cloudref Started Activities Extraction. 13 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 13 of 44 Side Projects
+INFO:root:Project JabRef/JabCon Started Activities Extraction. 14 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 14 of 44 Side Projects
+INFO:root:Project JabRef/custom-imports Started Activities Extraction. 15 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 15 of 44 Side Projects
+INFO:root:Project JabRef/www.jabref.org Started Activities Extraction. 16 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 16 of 44 Side Projects
+INFO:root:Project JabRef/user-documentation Started Activities Extraction. 17 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 17 of 44 Side Projects
+INFO:root:Project JabRef/blog.jabref.org Started Activities Extraction. 18 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 18 of 44 Side Projects
+INFO:root:Project JabRef/faq.jabref.org Started Activities Extraction. 19 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 19 of 44 Side Projects
+INFO:root:Project JabRef/issues.jabref.org Started Activities Extraction. 20 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 20 of 44 Side Projects
+INFO:root:Project JabRef/code.jabref.org Started Activities Extraction. 21 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 21 of 44 Side Projects
+INFO:root:Project JabRef/donations.jabref.org Started Activities Extraction. 22 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 22 of 44 Side Projects
+INFO:root:Project JabRef/downloads.jabref.org Started Activities Extraction. 23 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 23 of 44 Side Projects
+INFO:root:Project JabRef/jstyles.jabref.org Started Activities Extraction. 24 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 24 of 44 Side Projects
+INFO:root:Project JabRef/layouts.jabref.org Started Activities Extraction. 25 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 25 of 44 Side Projects
+INFO:root:Project JabRef/EndNode-JabRef-filters Started Activities Extraction. 26 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 26 of 44 Side Projects
+INFO:root:Project JabRef/scimappr Started Activities Extraction. 27 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 27 of 44 Side Projects
+INFO:root:Project JabRef/org.jabref.gui.customjfx.support Started Activities Extraction. 28 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 28 of 44 Side Projects
+INFO:root:Project JabRef/contribute.jabref.org Started Activities Extraction. 29 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 29 of 44 Side Projects
+INFO:root:Project JabRef/afterburner.fx Started Activities Extraction. 30 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 30 of 44 Side Projects
+INFO:root:Project JabRef/docker-javafx Started Activities Extraction. 31 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 31 of 44 Side Projects
+INFO:root:Project JabRef/2018-UserStudy Started Activities Extraction. 32 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 32 of 44 Side Projects
+INFO:root:Project JabRef/hacktoberfest-contributor-overview-generator Started Activities Extraction. 33 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 33 of 44 Side Projects
+INFO:root:Project JabRef/translate.jabref.org Started Activities Extraction. 34 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 34 of 44 Side Projects
+INFO:root:Project JabRef/themes.jabref.org Started Activities Extraction. 35 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Commit Extraction COMPLETE for 35 of 44 Side Projects
+INFO:root:Project JabRef/JabRefOnline Started Activities Extraction. 36 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 36 of 44 Side Projects
+INFO:root:Project JabRef/JabRef-Word-Addin Started Activities Extraction. 37 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 37 of 44 Side Projects
+INFO:root:Project JabRef/help.jabref.org Started Activities Extraction. 38 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 38 of 44 Side Projects
+INFO:root:Project JabRef/icu Started Activities Extraction. 39 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 39 of 44 Side Projects
+INFO:root:Project JabRef/EasyBind Started Activities Extraction. 40 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 40 of 44 Side Projects
+INFO:root:Project JabRef/jdk Started Activities Extraction. 41 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 41 of 44 Side Projects
+INFO:root:Project JabRef/jfxcentral-data Started Activities Extraction. 42 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 42 of 44 Side Projects
+INFO:root:Project JabRef/jdk21 Started Activities Extraction. 43 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 43 of 44 Side Projects
+INFO:root:Project JabRef/verein.jabref.org Started Activities Extraction. 44 of 44
+INFO:root:Starting Issue/PullRequests Extraction
+INFO:root:Pulls Extraction Complete
+INFO:root:Commit Extraction COMPLETE for 44 of 44 Side Projects
+INFO:root:Commit Extraction SUCCESSFULLY COMPLETED
