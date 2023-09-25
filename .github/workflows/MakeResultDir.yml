@@ -27,5 +27,6 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add pastExecutions
+        git add output
         git commit -m "End process"
         git push
