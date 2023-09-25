@@ -70,11 +70,11 @@ jobs:
 
     - name: Move CSV file to main repository
       run: | 
+        rm -r output/${{ vars.OWNER }}
         if [ -z "$(find output/Activities_Extraction_${{ vars.OWNER }}.log)" ]; then
            mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
         else
-           rm -r output/${{ vars.OWNER }}
            rm output/Activities_Extraction_${{ vars.OWNER }}.log
            mv developersInactivityAnalysis/logs/Activities_Extraction_${{ vars.OWNER }}.log output
            mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
