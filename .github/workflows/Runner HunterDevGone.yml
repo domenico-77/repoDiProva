@@ -45,8 +45,8 @@ jobs:
     - name: Run Python script MissingStuffCollector.py
       run: |
         mkdir -p developersInactivityAnalysis/Organizations/A80API
-        mkdir -p developersInactivityAnalysis/Organizations/atom/atom/
-        cp output/pauses_dates_list.csv developersInactivityAnalysis/Organizations/atom/atom/
+        mkdir -p developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/${{ vars.REPO }}/
+        cp output/pauses_dates_list.csv developersInactivityAnalysis/Organizations/${{ vars.OWNER }}/${{ vars.REPO }}/
         cp output/G_full_list.csv developersInactivityAnalysis/Organizations/A80API
         python3 developersInactivityAnalysis/Devrecommender/HunterDevGone.py
         
@@ -65,5 +65,5 @@ jobs:
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
         git add output
-        git commit -m "Fine HunterDevGone, salvataggio di /atom in output"
+        git commit -m "Fine HunterDevGone, salvataggio di /${{ vars.OWNER }} in output"
         git push
