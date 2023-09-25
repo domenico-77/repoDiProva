@@ -16,7 +16,7 @@ jobs:
       run: mkdir -p pastExecutions/$(date +'%Y-%m-%d')
       
     - name: Sposta i file dall'output alla cartella con la data corrente
-      run: mv output/* $(date +'%Y-%m-%d')
+      run: mv output/* pastExecutions/$(date +'%Y-%m-%d')
 
     - name: Svuota la cartella "output"
       run: rm -rf output/*
@@ -26,6 +26,6 @@ jobs:
         git config --local user.name "domenico-77"
         git config --local user.email "d.vicenti1@studenti.uniba.it"
         git pull
-        git add $(date +'%Y-%m-%d')
+        git add pastExecutions
         git commit -m "End process"
         git push
