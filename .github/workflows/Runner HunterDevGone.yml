@@ -56,7 +56,7 @@ jobs:
     - name: Move CSV file to main repository
       run: | 
         
-        mv developersInactivityAnalysis/Organizations/atom output
+        mv developersInactivityAnalysis/Organizations/${{ vars.OWNER }} output
        
 
     - name: Commit changes
