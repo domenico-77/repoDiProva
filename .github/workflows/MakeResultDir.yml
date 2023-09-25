@@ -18,8 +18,10 @@ jobs:
     - name: Sposta i file dall'output alla cartella con la data corrente
       run: mv output/* pastExecutions/$(date +'%Y-%m-%d')
 
-    - name: Svuota la cartella "output"
-      run: rm -rf output/*
+    - name: Svuota la cartella "output" e "appoggio"
+      run: |
+        rm -rf output/*
+        rm -rf appoggio/*
       
     - name: Commit changes
       run: |        
@@ -28,5 +30,6 @@ jobs:
         git pull
         git add pastExecutions
         git add output
+        git add appoggio
         git commit -m "End process"
         git push
